@@ -1,0 +1,11 @@
+{
+  "attr-name-style": false,
+  "attr-req-value": false,
+  "class-style": "dash",
+  "id-class-style": "dash",
+  "indent-width": 2,
+  "label-req-for": false,
+  "tag-bans": ["style", "b"],
+  "tag-name-lowercase": false,
+  "spec-char-escape": false
+}
