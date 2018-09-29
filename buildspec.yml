@@ -6,9 +6,11 @@ environment_variables:
 phases:
   install:
     commands:
+      - echo installing yarn
+      - npm install -g yarn
       - echo Installing source NPM dependencies...
       - yarn
-      - yarn global add @angular/cli
+      - yarn global add @angular/cli tslint stylelint
   pre_build:
     commands:
       - tslint **/*.ts
