@@ -20,11 +20,13 @@ ngx-translate and ngx-config provide runtime configuration and translation.
 
 ngx-logger feeds errors and events to an API endpoint to be consumed, and angulartics2 feeds data to Google Analytics.
 
+OutdatedBrowser is used to redirect users of old browsers.  Compodoc provides documentation.
+
 # Pipeline
 
 Code is deployed CI/CD as two AWS "hot" lambdas using AWS CodePipeline and CodeDeploy.
 Strict linting of TypeScript, SCSS and HTML in the front-end
-and ES6 in the backend, as well as unit and e2e testing, enforce quality.
+and ES6 in the backend, as well as unit and e2e testing, enforce quality at pre-commit and in the pipeline.
 
 This integration stems from the AWS QuickStart:
 https://github.com/aws-quickstart/quickstart-git2s3

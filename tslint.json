@@ -2,6 +2,15 @@
   "rulesDirectory": [
     "node_modules/codelyzer"
   ],
+  "extends": [
+    "tslint:latest",
+    "tslint-microsoft-contrib",
+    "tslint-clean-code",
+    "tslint-consistent-codestyle",
+    "tslint-sonarts",
+    "tslint-immutable",
+    "tslint-config-prettier"
+  ],
   "rules": {
     "arrow-return-shorthand": true,
     "callable-types": true,
@@ -10,12 +19,15 @@
       true,
       "check-space"
     ],
+    "completed-docs": false,
     "curly": true,
     "deprecation": {
       "severity": "warn"
     },
     "eofline": true,
+    "export-name": false,
     "forin": true,
+    "function-name": false,
     "import-blacklist": [
       true,
       "rxjs/Rx"
@@ -38,12 +50,28 @@
         "order": [
           "static-field",
           "instance-field",
+          "public-constructor",
           "static-method",
           "instance-method"
         ]
       }
     ],
+    "missing-jsdoc": false,
+    "naming-convention": [
+      true,
+      {"type": "default", "format": "camelCase", "leadingUnderscore": "forbid", "trailingUnderscore": "forbid"},
+      {"type": "member", "modifiers": "private", "leadingUnderscore": "require"},
+      {"type": "member", "modifiers": "protected", "leadingUnderscore": "require"},
+      {"type": "property", "modifiers": ["public", "static", "const"], "format": "UPPER_CASE"},
+      {"type": "type", "format": "PascalCase"},
+      {"type": "class", "modifiers": "abstract", "suffix": "Abstract"},
+      {"type": "interface", "suffix": "Interface"},
+      {"type": "enum", "suffix": "Enum"},
+      {"type": "enumMember", "format": "PascalCase"}
+    ],
+    "no-any": true,
     "no-arg": true,
+    "no-backbone-get-set-outside-model": false,
     "no-bitwise": true,
     "no-console": [
       true,
@@ -59,19 +87,21 @@
     "no-empty": false,
     "no-empty-interface": true,
     "no-eval": true,
-    "no-inferrable-types": [
-      true,
-      "ignore-params"
-    ],
+    "no-floating-promises": false,
+    "no-inferrable-types": false,
     "no-misused-new": true,
     "no-non-null-assertion": true,
+    "no-parameter-properties": false,
     "no-redundant-jsdoc": true,
+    "no-relative-imports": false,
     "no-shadowed-variable": true,
     "no-string-literal": false,
     "no-string-throw": true,
+    "no-submodule-imports": false,
     "no-switch-case-fall-through": true,
     "no-trailing-whitespace": true,
     "no-unnecessary-initializer": true,
+    "no-unsafe-any": false,
     "no-unused-expression": true,
     "no-use-before-declare": true,
     "no-var-keyword": true,
@@ -93,6 +123,7 @@
       true,
       "always"
     ],
+    "strict-boolean-expressions": false,
     "triple-equals": [
       true,
       "allow-null-check"

@@ -1,14 +1,60 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <!--htmllint tag-bans="false" -->
+  <style id="anti-click-jack-style" type="text/css">body{display:none !important;}</style>
+  <!--htmllint tag-bans="$previous" -->
+  <script type="text/javascript">
+      if (self === top) {
+          var antiClickjack = document.getElementById("anti-click-jack-style");
+          antiClickjack.parentNode.removeChild(antiClickjack);
+      } else {
+          top.location = self.location;
+      }
+  </script>
   <meta charset="utf-8">
-  <title>Angular6Demo</title>
+  <title>Loading...</title>
   <base href="/">
+  <link rel="stylesheet" href="/assets/js/vendor/outdatedbrowser/outdatedbrowser.min.css">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
+  <div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <!-- htmllint id-class-style="camelCase" -->
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update my browser now </a></p>
+    <!-- htmllint id-class-style="$previous" -->
+  </div>
   <app-root></app-root>
+  <script src="/assets/js/vendor/outdatedbrowser/outdatedbrowser.min.js"></script>
+
+  <!-- OutdatedBrowser boilerplate -->
+  <script type="text/javascript">
+      //event listener: DOM ready
+      function addLoadEvent(func) {
+          var oldonload = window.onload;
+          if (typeof window.onload != 'function') {
+              window.onload = func;
+          } else {
+              window.onload = function() {
+                  if (oldonload) {
+                      oldonload();
+                  }
+                  func();
+              }
+          }
+      }
+      //call plugin function after DOM ready
+      addLoadEvent(function(){
+          outdatedBrowser({
+              bgColor: '#f25648',
+              color: '#ffffff',
+              lowerThan: 'transform',
+              languagePath: '/assets/js/vendor/outdatedbrowser/lang/en.html'
+          })
+      });
+  </script>
 </body>
 </html>

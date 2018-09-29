@@ -9,6 +9,7 @@
 /node_modules
 package-lock.json
 package.lock
+yarn-error.log
 
 # IDEs and editors
 /.idea

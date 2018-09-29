@@ -1,0 +1,123 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>angular6-demo documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	      <link rel="stylesheet" href="./styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="./" class="navbar-brand">angular6-demo documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<h1 id="angular-6-full-stack-demo">Angular 6 Full-Stack Demo</h1>
+<p>In this project I am demonstrating my current patterns and understanding in the
+MEAN stack composed of Angular 6, Angular Universal, Angular Material, express,
+and MongoDB.</p>
+<h1 id="back-end">Back-end</h1>
+<p>In this application, an express REST API backed by MongoDB exposes a store
+selling sporks (it&#39;s a spoon and fork combined!). Passport and JWT are used for
+authentication against MongoDB and call authentication.</p>
+<h1 id="front-end">Front-end</h1>
+<p>An Angular Material front-end consumes the API, preloading with Angular Universal for SEO and TTS. The customer registers, builds a cart, then checks out using Stripe.</p>
+<p>In the Angular app, we use @ngrx/store and ChangeDetectionStrategy.Push for performance, immutability and stability.</p>
+<p>ngx-translate and ngx-config provide runtime configuration and translation.</p>
+<p>ngx-logger feeds errors and events to an API endpoint to be consumed, and angulartics2 feeds data to Google Analytics.</p>
+<p>OutdatedBrowser is used to redirect users of old browsers.  Compodoc provides documentation.</p>
+<h1 id="pipeline">Pipeline</h1>
+<p>Code is deployed CI/CD as two AWS &quot;hot&quot; lambdas using AWS CodePipeline and CodeDeploy.
+Strict linting of TypeScript, SCSS and HTML in the front-end
+and ES6 in the backend, as well as unit and e2e testing, enforce quality at pre-commit and in the pipeline.</p>
+<p>This integration stems from the AWS QuickStart:
+<a href="https://github.com/aws-quickstart/quickstart-git2s3">https://github.com/aws-quickstart/quickstart-git2s3</a></p>
+<h1 id="instructions-for-use">Instructions for Use</h1>
+<p>** Please note that this project uses yarn and that package-lock.json is in
+the .gitignore **</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+       </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+       <script src="./js/menu-wc.js"></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
