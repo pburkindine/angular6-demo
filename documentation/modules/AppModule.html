@@ -289,7 +289,11 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from &#x27;@angular/common/http&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+  HTTP_INTERCEPTORS,
+  HttpClient,
+  HttpClientModule,
+} from &#x27;@angular/common/http&#x27;;
 import { NgModule } from &#x27;@angular/core&#x27;;
 import { FormsModule, ReactiveFormsModule } from &#x27;@angular/forms&#x27;;
 import { BrowserModule } from &#x27;@angular/platform-browser&#x27;;
@@ -344,7 +348,7 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
     LoggerModule.forRoot({
       serverLoggingUrl: &#x27;/api/logs&#x27;,
       level: NgxLoggerLevel.DEBUG,
-      serverLogLevel: NgxLoggerLevel.ERROR
+      serverLogLevel: NgxLoggerLevel.ERROR,
     }),
     Ng2UiAuthModule.forRoot(AuthConfig),
     ReactiveFormsModule,
@@ -363,9 +367,7 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
       },
     }),
   ],
-  declarations: [
-    AppComponent,
-  ],
+  declarations: [AppComponent],
   providers: [
     RequestInspectorService,
     {
@@ -400,12 +402,12 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
     {
       provide: LogServiceAbstract,
       useClass: LogService,
-    }
+    },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 // tslint:disable-next-line:no-unnecessary-class
-export class AppModule { }
+export class AppModule {}
 </code></pre>
     </div>
 </div>

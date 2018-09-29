@@ -269,7 +269,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/app.component.ts:35</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/app.component.ts:33</a></div>
                             </td>
                         </tr>
 
@@ -426,7 +426,7 @@ import { Angulartics2GoogleTagManager } from &#x27;angulartics2/gtm&#x27;;
 @Component({
   selector: &#x27;app-root&#x27;,
   templateUrl: &#x27;./app.component.html&#x27;,
-  styleUrls: [&#x27;./app.component.css&#x27;]
+  styleUrls: [&#x27;./app.component.css&#x27;],
 })
 export class AppComponent implements OnInit {
   public title: string &#x3D; &#x27;Loading...&#x27;;
@@ -444,12 +444,10 @@ export class AppComponent implements OnInit {
   }
 
   protected _consumeConfig(): void {
-    this._translateService.get(&#x27;siteTitle&#x27;).subscribe(
-      (siteTitle: string) &#x3D;&gt; {
-        this._titleService.setTitle(siteTitle);
-        this.title &#x3D; siteTitle;
-      }
-    );
+    this._translateService.get(&#x27;siteTitle&#x27;).subscribe((siteTitle: string) &#x3D;&gt; {
+      this._titleService.setTitle(siteTitle);
+      this.title &#x3D; siteTitle;
+    });
   }
 
   protected _configureTranslation(): void {

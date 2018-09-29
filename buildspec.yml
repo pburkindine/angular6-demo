@@ -6,8 +6,25 @@ environment_variables:
 phases:
   install:
     commands:
-      - echo installing yarn
+      - echo Installing yarn
       - npm install -g yarn
+
+      # https://aws.amazon.com/blogs/devops/how-to-run-headless-front-end-tests-with-aws-cloud9-and-aws-codebuild/
+      - echo Installing chrome
+      - yarn add --dev puppeteer @angular-devkit/build-angular
+      - echo "Missing Libs" || ldd ./node_modules/puppeteer/.local-chromium/linux-549031/chrome-linux/chrome | grep not
+      - apt-get upgrade
+      - apt-get update
+      - apt-get install -y apt-transport-https
+      - apt-get install -y libxcursor1
+      - apt-get install -y libgtk-3-dev
+      - apt-get install -y libxss1
+      - apt-get install -y libasound2
+      - apt-get install -y libnspr4
+      - apt-get install -y libnss3
+      - apt-get install -y libx11-xcb1
+      - echo "Missing Libs" || ldd ./node_modules/puppeteer/.local-chromium/linux-549031/chrome-linux/chrome | grep not
+
       - echo Installing source NPM dependencies...
       - yarn
       - yarn global add @angular/cli

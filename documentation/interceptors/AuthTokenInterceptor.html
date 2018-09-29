@@ -259,7 +259,9 @@ export class AuthTokenInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable&lt;HttpEvent&lt;any&gt;&gt; {
     // tslint:enable:no-any
-    const authService: AuthService &#x3D; this._injector.get&lt;AuthService&gt;(AuthService);
+    const authService: AuthService &#x3D; this._injector.get&lt;AuthService&gt;(
+      AuthService
+    );
     const token: string &#x3D; authService.getToken();
     if (!token) {
       return next.handle(req);

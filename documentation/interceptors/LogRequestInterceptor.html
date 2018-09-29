@@ -267,7 +267,7 @@ import { RequestInspectorService } from &#x27;../http/request-inspector.service&
 export class LogRequestInterceptor implements HttpInterceptor {
   public constructor(
     private _logger: LogServiceAbstract,
-    private _requestInspector: RequestInspectorService,
+    private _requestInspector: RequestInspectorService
   ) {}
 
   // tslint:disable:no-any
