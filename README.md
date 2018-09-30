@@ -31,11 +31,13 @@ The backend is deployed to an EC2 using Elastic Beanstalk, and the frontend
 is exposed in an S3 bucket.
 
 Strict linting of TypeScript, SCSS and HTML in the front-end
-and ES6 in the backend, as well as unit and e2e testing,
+and ES6 in the backend, along with unit tests,
 enforce quality measures at pre-commit and in the pipeline.
 
 NOTE: There is no effort made at this time to implement a config.json builder,
 runtime config.json is committed to the repository
+
+NOTE: e2e tests are disabled because of issues getting ChromeDriver to run in CI
 
 # Instructions for Use
 ** Please note that this project uses yarn and that package-lock.json is in
