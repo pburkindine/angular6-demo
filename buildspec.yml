@@ -9,14 +9,6 @@ phases:
        - echo Installing node
        - curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
        - apt-get install -y nodejs
-#      - echo Installing docker
-#      - apt-get update
-#      - apt-get install -y apt-transport-https
-#      - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-#      - add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-#      - apt-get update
-#      - apt-get install -y docker-ce
-#      - sudo service docker restart
 
       - echo Pulling trion/ng-cli-e2e
       - docker pull trion/ng-cli-e2e
