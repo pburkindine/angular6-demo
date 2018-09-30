@@ -6,33 +6,18 @@ environment_variables:
 phases:
   install:
     commands:
+      - apt-get install docker
+      - docker pull trion/ng-cli-e2e
       - echo Installing yarn
       - npm install -g yarn
-
-      # https://aws.amazon.com/blogs/devops/how-to-run-headless-front-end-tests-with-aws-cloud9-and-aws-codebuild/
-      - echo Installing chrome
-      - yarn add --dev puppeteer @angular-devkit/build-angular
-      - echo "Missing Libs" || ldd ./node_modules/puppeteer/.local-chromium/linux-549031/chrome-linux/chrome | grep not
-      - apt-get upgrade
-      - apt-get update
-      - apt-get install -y apt-transport-https
-      - apt-get install -y libxcursor1
-      - apt-get install -y libgtk-3-dev
-      - apt-get install -y libxss1
-      - apt-get install -y libasound2
-      - apt-get install -y libnspr4
-      - apt-get install -y libnss3
-      - apt-get install -y libx11-xcb1
-      - echo "Missing Libs" || ldd ./node_modules/puppeteer/.local-chromium/linux-549031/chrome-linux/chrome | grep not
-
       - echo Installing source NPM dependencies...
       - yarn
       - yarn global add @angular/cli
   pre_build:
     commands:
       - npm run lint
-      - ng test
-      - ng e2e
+      - docker container run -u $(id -u) --rm --mount src=`pwd`,target=/app,type=bind trion/ng-cli-e2e ng test --watch false --single-run true --code-coverage true --sourcemaps false
+      - docker container run -u $(id -u) --rm --mount src=`pwd`,target=/app,type=bind trion/ng-cli-e2e ng e2e
   build:
     commands:
       - echo Build started on `date`
