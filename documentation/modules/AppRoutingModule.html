@@ -91,9 +91,9 @@ const appRoutes: Routes &#x3D; [
     ],
   },
   {
-    path: &#x27;&#x27;,
+    path: &#x27;home&#x27;,
     canActivate: [AuthGuard],
-    children: [{ path: &#x27;main&#x27;, loadChildren: &#x27;./home/home.module#HomeModule&#x27; }],
+    loadChildren: &#x27;./home/home.module#HomeModule&#x27;
   },
   {
     path: &#x27;**&#x27;,

@@ -1,5 +1,5 @@
 {
-  "siteTitle": "The Spork Store",
+  "siteTitle": "SporkStore",
   "nav": {
     "backToLogin": "Back to Login",
     "errorPage": "There was a problem loading the page.  Please try again or contact customer service."
@@ -7,6 +7,12 @@
   "pages": {
     "home": {
       "welcomeMessage": "Welcome to"
+    },
+    "login": {
+      "loginButton": "Login",
+      "passwordPlaceholder": "Password",
+      "signUpLink": "Sign Up",
+      "title": "Login"
     }
   }
 }

@@ -18,9 +18,9 @@ const appRoutes: Routes = [
     ],
   },
   {
-    path: '',
+    path: 'home',
     canActivate: [AuthGuard],
-    children: [{ path: 'main', loadChildren: './home/home.module#HomeModule' }],
+    loadChildren: './home/home.module#HomeModule',
   },
   {
     path: '**',

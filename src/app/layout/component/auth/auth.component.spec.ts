@@ -6,6 +6,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { ConfigService } from '@ngx-config/core';
 
 import { AuthLayoutComponent } from './auth.component';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 let configServiceStub: jasmine.SpyObj<ConfigService>;
 
@@ -29,9 +30,12 @@ describe('AuthLayoutComponent', () => {
     createStubs();
 
     TestBed.configureTestingModule({
-      imports: [MatCardModule, RouterTestingModule],
+      imports: [MatCardModule, RouterTestingModule, TranslateModule.forRoot()],
       declarations: [AuthLayoutComponent],
-      providers: [{ provide: ConfigService, useValue: configServiceStub }],
+      providers: [
+        { provide: ConfigService, useValue: configServiceStub },
+        TranslateService,
+      ],
     }).compileComponents();
   }));
 
@@ -55,5 +59,13 @@ describe('AuthLayoutComponent', () => {
     const expectedUri: string = testConfig.auth.heroImageUri;
 
     expect(heroImageTag.src).toMatch(new RegExp(`${expectedUri}$`));
+  });
+
+  it('should show translation string for sign up', () => {
+    pending('TODO - Lower priority, demonstrated in ErrorPageComponent e.g.');
+  });
+
+  it('should show translation string for store title', () => {
+    pending('TODO - Lower priority, demonstrated in ErrorPageComponent e.g.');
   });
 });

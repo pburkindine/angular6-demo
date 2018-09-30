@@ -287,7 +287,7 @@
                     <td class="col-md-4">
 
                             <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                                <b>Returns : </b>    <code><a href="../interfaces/ApiResponse.html" target="_self" >Observable&lt;ApiResponse&gt;</a></code>
 
                             </div>
                     </td>
@@ -348,11 +348,11 @@ import { Router } from &#x27;@angular/router&#x27;;
 import { ConfigService } from &#x27;@ngx-config/core&#x27;;
 import { AuthService } from &#x27;ng2-ui-auth&#x27;;
 import { ToastrService } from &#x27;ngx-toastr&#x27;;
-import { of } from &#x27;rxjs&#x27;;
+import { Observable, of } from &#x27;rxjs&#x27;;
 import { catchError, tap } from &#x27;rxjs/internal/operators&#x27;;
+import { ApiResponse } from &#x27;../../model/payload/api-response.model&#x27;;
+import { ErrorResponse } from &#x27;../../model/payload/error-response.model&#x27;;
 
-import { ApiResponse } from &#x27;../../model/api-response.model&#x27;;
-import { ErrorResponse } from &#x27;../../model/error-response.model&#x27;;
 
 @Injectable({
   providedIn: &#x27;root&#x27;,
@@ -377,18 +377,11 @@ export class LogoutService {
     this._logoutUri &#x3D; &#x60;${config.core.apiBaseUri}${config.auth.logoutUri}&#x60;;
   }
 
-  public logout(): void {
+  public logout(): Observable&lt;ApiResponse&gt; {
     this._authService.logout();
     this._router.navigate([&#x27;auth&#x27;, &#x27;login&#x27;]);
 
-    this._http.post&lt;ApiResponse&gt;(this._logoutUri, null).pipe(
-      tap(() &#x3D;&gt; console.log(&#x27;tapped&#x27;)),
-      catchError((err: ErrorResponse) &#x3D;&gt; {
-        this._toastr.error(&#x60;Error logging out: ${err.msg}&#x60;);
-
-        return of(err);
-      })
-    ).subscribe((something) &#x3D;&gt; console.log(&#x27;success&#x27;, something), (err) &#x3D;&gt; { console.log(&#x27;err&#x27;, err) });
+    return this._http.post&lt;ApiResponse&gt;(this._logoutUri, null);
   }
 }
 </code></pre>

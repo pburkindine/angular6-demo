@@ -74,20 +74,13 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
 import { RouterModule, Routes } from &#x27;@angular/router&#x27;;
 
-import { AuthLayoutComponent } from &#x27;../layout/component/auth/auth.component&#x27;;
 import { HomeComponent } from &#x27;./component/home/home.component&#x27;;
 
 const homeRoutes: Routes &#x3D; [
   {
     path: &#x27;&#x27;,
-    component: AuthLayoutComponent,
-    children: [
-      {
-        path: &#x27;&#x27;,
-        pathMatch: &#x27;full&#x27;,
-        component: HomeComponent,
-      },
-    ],
+    pathMatch: &#x27;full&#x27;,
+    component: HomeComponent,
   },
 ];
 

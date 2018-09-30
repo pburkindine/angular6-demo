@@ -174,7 +174,7 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { CommonModule } from &#x27;@angular/common&#x27;;
 import { NgModule } from &#x27;@angular/core&#x27;;
-import { MatCardModule } from &#x27;@angular/material&#x27;;
+import { MatCardModule, MatIconModule } from &#x27;@angular/material&#x27;;
 import { RouterModule } from &#x27;@angular/router&#x27;;
 import { TranslateModule } from &#x27;@ngx-translate/core&#x27;;
 
@@ -183,7 +183,7 @@ import { BackToLoginComponent } from &#x27;./component/back-to-login/back-to-log
 import { ErrorPageComponent } from &#x27;./component/error/error.component&#x27;;
 
 @NgModule({
-  imports: [CommonModule, MatCardModule, RouterModule, TranslateModule],
+  imports: [CommonModule, MatCardModule, MatIconModule, RouterModule, TranslateModule],
   declarations: [AuthLayoutComponent, BackToLoginComponent, ErrorPageComponent],
 })
 // tslint:disable-next-line:no-unnecessary-class

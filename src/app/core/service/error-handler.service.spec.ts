@@ -1,13 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ErrorHandlerService } from './error-handler.service';
-import { ToastrService } from 'ngx-toastr';
-import { ConfigService } from '@ngx-config/core';
-import { Router } from '@angular/router';
-import { AuthService } from 'ng2-ui-auth';
-import { HttpClient } from '@angular/common/http';
 import { LogServiceAbstract } from '../interface/service/log.service.abstract';
-import { ErrorResponse } from '../model/error-response.model';
+import { ErrorHandlerService } from './error-handler.service';
 
 let logServiceStub: jasmine.SpyObj<LogServiceAbstract>;
 

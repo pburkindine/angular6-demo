@@ -1,12 +1,18 @@
 {
   "siteTitle": "La Tienda de Spork",
   "nav": {
-    "backToLogin": "Atrás para iniciar sesión"
+    "backToLogin": "Atrás para iniciar sesión",
     "errorPage": "Hubo un problema al cargar la página. Por favor intente de nuevo o contacte al servicio al cliente."
   },
   "pages": {
     "home": {
       "welcomeMessage": "Bienvenido a"
+    },
+    "login": {
+      "loginButton": "Iniciar sesión",
+      "passwordPlaceholder": "Contraseña",
+      "signUpLink": "Regístrate",
+      "title": "Iniciar"
     }
   }
 }

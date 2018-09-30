@@ -13,7 +13,15 @@
 }
 
 .AuthLayout__hero-img {
-  max-width: 100%;
+  margin-left: 5%;
+  max-width: 90%;
+}
+
+.AuthLayout__store-title {
+  font-size: 1.6rem;
+  margin-left: 2rem;
+  margin-top: -1.2rem;
+  opacity: 0.6;
 }
 
 .AuthLayout__content-pane {

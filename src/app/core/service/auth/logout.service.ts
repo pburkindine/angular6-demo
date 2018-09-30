@@ -4,11 +4,10 @@ import { Router } from '@angular/router';
 import { ConfigService } from '@ngx-config/core';
 import { AuthService } from 'ng2-ui-auth';
 import { ToastrService } from 'ngx-toastr';
-import { of } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/internal/operators';
-
-import { ApiResponse } from '../../model/api-response.model';
-import { ErrorResponse } from '../../model/error-response.model';
+import { ApiResponse } from '../../model/payload/api-response.model';
+import { ErrorResponse } from '../../model/payload/error-response.model';
 
 @Injectable({
   providedIn: 'root',
@@ -33,25 +32,10 @@ export class LogoutService {
     this._logoutUri = `${config.core.apiBaseUri}${config.auth.logoutUri}`;
   }
 
-  public logout(): void {
+  public logout(): Observable<ApiResponse> {
     this._authService.logout();
     this._router.navigate(['auth', 'login']);
 
-    this._http
-      .post<ApiResponse>(this._logoutUri, null)
-      .pipe(
-        tap(() => console.log('tapped')),
-        catchError((err: ErrorResponse) => {
-          this._toastr.error(`Error logging out: ${err.msg}`);
-
-          return of(err);
-        })
-      )
-      .subscribe(
-        (something) => console.log('success', something),
-        (err) => {
-          console.log('err', err);
-        }
-      );
+    return this._http.post<ApiResponse>(this._logoutUri, null);
   }
 }

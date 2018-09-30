@@ -17,7 +17,7 @@ TODO is JWT blacklisting and logout since Redis is not in the stack
 
 An Angular Material front-end consumes the API.  The customer registers, builds a cart, then checks out using Stripe.
 
-In the Angular app, we use @ngrx/store and ChangeDetectionStrategy.Push for performance, immutability and stability.
+In the Angular app, we use @ngrx/store, reactive forms, and ChangeDetectionStrategy.Push for performance, immutability and stability.
 
 ngx-translate and ngx-config provide runtime configuration and translation.
 

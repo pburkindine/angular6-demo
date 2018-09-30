@@ -1,6 +1,8 @@
 import { DebugElement } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatIconModule } from '@angular/material';
 import { By } from '@angular/platform-browser';
+import { RouterTestingModule } from '@angular/router/testing';
 import {
   TranslateLoader,
   TranslateModule,
@@ -10,12 +12,11 @@ import { Observable, of } from 'rxjs';
 
 import { BackToLoginComponent } from '../back-to-login/back-to-login.component';
 import { ErrorPageComponent } from './error.component';
-import { RouterTestingModule } from '@angular/router/testing';
 
 // tslint:disable-next-line:no-any
 const translations: any = {
   nav: {
-    errorPage: "I'll just put this over here with the rest of the fire.",
+    errorPage: `I'll just put this over here with the rest of the fire.`,
   },
 };
 
@@ -33,6 +34,7 @@ describe('ErrorPageComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
+        MatIconModule,
         RouterTestingModule,
         TranslateModule.forRoot({
           loader: {

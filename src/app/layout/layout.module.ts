@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { MatCardModule } from '@angular/material';
+import { MatCardModule, MatIconModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -9,7 +9,13 @@ import { BackToLoginComponent } from './component/back-to-login/back-to-login.co
 import { ErrorPageComponent } from './component/error/error.component';
 
 @NgModule({
-  imports: [CommonModule, MatCardModule, RouterModule, TranslateModule],
+  imports: [
+    CommonModule,
+    MatCardModule,
+    MatIconModule,
+    RouterModule,
+    TranslateModule,
+  ],
   declarations: [AuthLayoutComponent, BackToLoginComponent, ErrorPageComponent],
 })
 // tslint:disable-next-line:no-unnecessary-class

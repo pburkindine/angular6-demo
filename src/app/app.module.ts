@@ -74,6 +74,7 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
       disableTimeOut: true,
       maxOpened: 2,
       onActivateTick: true,
+      positionClass: 'toast-bottom-right',
       tapToDismiss: true,
     }),
     TranslateModule.forRoot({

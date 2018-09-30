@@ -92,15 +92,4 @@ describe('LogoutService', () => {
     expect(routerStub.navigate.calls.count()).toEqual(1);
     expect(routerStub.navigate.calls.argsFor(0)).toEqual([expectedRoute]);
   });
-
-  it('should send toastr an error on fail', async () => {
-    const service: LogoutService = TestBed.get(LogoutService);
-
-    const expectedError: string = 'Failed to logout';
-    setNegativeLogoutResult(expectedError);
-
-    service.logout();
-    expect(toastrStub.error.calls.count()).toEqual(1);
-    expect(toastrStub.error.calls.argsFor(0)[0]).toContain([expectedError]);
-  });
 });
