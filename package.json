@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "test": "ng test",
+    "test": "ng test --code-coverage",
     "e2e": "ng e2e",
     "tslint": "./node_modules/.bin/tslint -p . -c tslint.json -t verbose src/**/*.ts",
     "stylelint": "./node_modules/.bin/stylelint src/**/*.scss",

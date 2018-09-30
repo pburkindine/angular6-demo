@@ -145,45 +145,15 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(_logger: <a href="../injectables/LogService.html">LogServiceAbstract</a>)</code>
+<code>constructor()</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/layout/component/error/error.component.ts:9</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/layout/component/error/error.component.ts:8</a></div>
                             </td>
                         </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                            <div>
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>_logger</td>
-                                                  
-                                                        <td>
-                                                                    <code><a href="../injectables/LogService.html" target="_self" >LogServiceAbstract</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                    </td>
-                </tr>
             </tbody>
         </table>
 </section>
@@ -219,7 +189,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/layout/component/error/error.component.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/layout/component/error/error.component.ts:11</a></div>
                             </td>
                         </tr>
 
@@ -243,18 +213,16 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
-import { LogServiceAbstract } from &#x27;../../../core/interface/service/log.service.abstract&#x27;;
 
 @Component({
   selector: &#x27;app-error-page&#x27;,
   templateUrl: &#x27;./error.component.html&#x27;,
-  styleUrls: [&#x27;./error.component.scss&#x27;]
+  styleUrls: [&#x27;./error.component.scss&#x27;],
 })
 export class ErrorPageComponent implements OnInit {
-  constructor(private _logger: LogServiceAbstract) { }
+  constructor() {}
 
   ngOnInit(): void {
-    throw new Error(&#x27;TEST1&#x27;);
   }
 }
 </code></pre>

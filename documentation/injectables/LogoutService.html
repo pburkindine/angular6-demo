@@ -349,13 +349,13 @@ import { ConfigService } from &#x27;@ngx-config/core&#x27;;
 import { AuthService } from &#x27;ng2-ui-auth&#x27;;
 import { ToastrService } from &#x27;ngx-toastr&#x27;;
 import { of } from &#x27;rxjs&#x27;;
-import { catchError } from &#x27;rxjs/internal/operators&#x27;;
+import { catchError, tap } from &#x27;rxjs/internal/operators&#x27;;
 
 import { ApiResponse } from &#x27;../../model/api-response.model&#x27;;
 import { ErrorResponse } from &#x27;../../model/error-response.model&#x27;;
 
 @Injectable({
-  providedIn: &#x27;root&#x27;
+  providedIn: &#x27;root&#x27;,
 })
 export class LogoutService {
   private _logoutUri: string;
@@ -365,7 +365,7 @@ export class LogoutService {
     private _configService: ConfigService,
     private _http: HttpClient,
     private _router: Router,
-    private _toastr: ToastrService,
+    private _toastr: ToastrService
   ) {
     this._configure();
   }
@@ -382,14 +382,13 @@ export class LogoutService {
     this._router.navigate([&#x27;auth&#x27;, &#x27;login&#x27;]);
 
     this._http.post&lt;ApiResponse&gt;(this._logoutUri, null).pipe(
-      catchError(
-        (err: ErrorResponse) &#x3D;&gt; {
-          this._toastr.error(err.msg);
+      tap(() &#x3D;&gt; console.log(&#x27;tapped&#x27;)),
+      catchError((err: ErrorResponse) &#x3D;&gt; {
+        this._toastr.error(&#x60;Error logging out: ${err.msg}&#x60;);
 
-          return of(err);
-        }
-      )
-    );
+        return of(err);
+      })
+    ).subscribe((something) &#x3D;&gt; console.log(&#x27;success&#x27;, something), (err) &#x3D;&gt; { console.log(&#x27;err&#x27;, err) });
   }
 }
 </code></pre>

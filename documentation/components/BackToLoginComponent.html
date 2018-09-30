@@ -233,7 +233,7 @@ export class BackToLoginComponent implements OnInit {
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;BackToLogin__wrapper text-center col-12&quot;&gt;
   &lt;hr /&gt;
-  &lt;div id&#x3D;&quot;BackToLogin__inner-wrapper&quot;&gt;
+  &lt;div class&#x3D;&quot;BackToLogin__inner-wrapper&quot;&gt;
     &lt;a [routerLink]&#x3D;&quot;[&#x27;/auth/login&#x27;]&quot;&gt;
       &lt;i class&#x3D;&quot;fas fa-chevron-circle-left mr-2&quot;&gt;&lt;/i&gt;{{ &#x27;nav.backToLogin&#x27; | translate }}
     &lt;/a&gt;
@@ -267,7 +267,7 @@ export class BackToLoginComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="BackToLogin__wrapper text-center col-12">  <hr />  <div id="BackToLogin__inner-wrapper">    <a [routerLink]="[\'/auth/login\']">      <i class="fas fa-chevron-circle-left mr-2"></i>{{ \'nav.backToLogin\' | translate }}    </a>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="BackToLogin__wrapper text-center col-12">  <hr />  <div class="BackToLogin__inner-wrapper">    <a [routerLink]="[\'/auth/login\']">      <i class="fas fa-chevron-circle-left mr-2"></i>{{ \'nav.backToLogin\' | translate }}    </a>  </div></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthLayoutComponent', 'selector': 'app-auth-layout'},{'name': 'BackToLoginComponent', 'selector': 'app-back-to-login'},{'name': 'ErrorPageComponent', 'selector': 'app-error-page'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'BackToLoginComponent'};

@@ -1,6 +1,7 @@
 import { DebugElement } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { RouterTestingModule } from '@angular/router/testing';
 import {
   TranslateLoader,
   TranslateModule,
@@ -8,14 +9,12 @@ import {
 } from '@ngx-translate/core';
 import { Observable, of } from 'rxjs';
 
-import { BackToLoginComponent } from '../back-to-login/back-to-login.component';
-import { ErrorPageComponent } from './error.component';
-import { RouterTestingModule } from '@angular/router/testing';
+import { BackToLoginComponent } from './back-to-login.component';
 
 // tslint:disable-next-line:no-any
 const translations: any = {
   nav: {
-    errorPage: "I'll just put this over here with the rest of the fire.",
+    backToLogin: 'Back to Login Page',
   },
 };
 
@@ -26,9 +25,9 @@ class TranslateLoaderStub implements TranslateLoader {
   }
 }
 
-describe('ErrorPageComponent', () => {
-  let component: ErrorPageComponent;
-  let fixture: ComponentFixture<ErrorPageComponent>;
+describe('BackToLoginComponent', () => {
+  let component: BackToLoginComponent;
+  let fixture: ComponentFixture<BackToLoginComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -41,13 +40,13 @@ describe('ErrorPageComponent', () => {
           },
         }),
       ],
-      declarations: [BackToLoginComponent, ErrorPageComponent],
+      declarations: [BackToLoginComponent],
       providers: [TranslateService],
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ErrorPageComponent);
+    fixture = TestBed.createComponent(BackToLoginComponent);
     component = fixture.componentInstance;
 
     TestBed.get(TranslateService).use('en');
@@ -58,15 +57,15 @@ describe('ErrorPageComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should display the correct error string from the translation service', () => {
-    const errorPageDe: DebugElement = fixture.debugElement;
-    const messageDe: DebugElement = errorPageDe.query(
-      By.css('.ErrorPage__message')
+  it('should display the correct Back to Login string from the translation service', () => {
+    const backToLoginDe: DebugElement = fixture.debugElement;
+    const innerWrapperDe: DebugElement = backToLoginDe.query(
+      By.css('.BackToLogin__inner-wrapper')
     );
-    const message: HTMLHeadingElement = messageDe.nativeElement;
+    const innerWrapper: HTMLDivElement = innerWrapperDe.nativeElement;
 
-    const expectedValue: string = translations.nav.errorPage;
+    const expectedValue: string = translations.nav.backToLogin;
 
-    expect(message.innerText).toMatch(new RegExp(`^${expectedValue}$`));
+    expect(innerWrapper.innerText).toMatch(new RegExp(`${expectedValue}$`));
   });
 });

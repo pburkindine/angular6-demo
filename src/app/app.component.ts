@@ -11,8 +11,6 @@ import { LogServiceAbstract } from './core/interface/service/log.service.abstrac
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  public title: string = 'Loading...';
-
   constructor(
     private _angulartics2GoogleTagManager: Angulartics2GoogleTagManager,
     private _configService: ConfigService,
@@ -30,7 +28,6 @@ export class AppComponent implements OnInit {
   protected _configure(): void {
     this._translateService.get('siteTitle').subscribe((siteTitle: string) => {
       this._titleService.setTitle(siteTitle);
-      this.title = siteTitle;
     });
 
     // tslint:disable-next-line:no-any

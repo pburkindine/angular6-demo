@@ -5,7 +5,7 @@ import { ConfigService } from '@ngx-config/core';
 import { AuthService } from 'ng2-ui-auth';
 import { ToastrService } from 'ngx-toastr';
 import { of } from 'rxjs';
-import { catchError } from 'rxjs/internal/operators';
+import { catchError, tap } from 'rxjs/internal/operators';
 
 import { ApiResponse } from '../../model/api-response.model';
 import { ErrorResponse } from '../../model/error-response.model';
@@ -37,12 +37,21 @@ export class LogoutService {
     this._authService.logout();
     this._router.navigate(['auth', 'login']);
 
-    this._http.post<ApiResponse>(this._logoutUri, null).pipe(
-      catchError((err: ErrorResponse) => {
-        this._toastr.error(err.msg);
+    this._http
+      .post<ApiResponse>(this._logoutUri, null)
+      .pipe(
+        tap(() => console.log('tapped')),
+        catchError((err: ErrorResponse) => {
+          this._toastr.error(`Error logging out: ${err.msg}`);
 
-        return of(err);
-      })
-    );
+          return of(err);
+        })
+      )
+      .subscribe(
+        (something) => console.log('success', something),
+        (err) => {
+          console.log('err', err);
+        }
+      );
   }
 }

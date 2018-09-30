@@ -168,7 +168,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/core/service/error-handler.service.ts:14</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/core/service/error-handler.service.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -227,12 +227,10 @@
 import { LogServiceAbstract } from &#x27;../interface/service/log.service.abstract&#x27;;
 
 @Injectable({
-  providedIn: &#x27;root&#x27;
+  providedIn: &#x27;root&#x27;,
 })
 export class ErrorHandlerService implements ErrorHandler {
-  constructor(
-    private _logger: LogServiceAbstract
-  ) {}
+  constructor(private _logger: LogServiceAbstract) {}
 
   // tslint:disable-next-line:no-any
   handleError(error: any): void {

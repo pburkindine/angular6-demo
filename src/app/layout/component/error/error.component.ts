@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { LogServiceAbstract } from '../../../core/interface/service/log.service.abstract';
 
 @Component({
   selector: 'app-error-page',
@@ -7,9 +6,7 @@ import { LogServiceAbstract } from '../../../core/interface/service/log.service.
   styleUrls: ['./error.component.scss'],
 })
 export class ErrorPageComponent implements OnInit {
-  constructor(private _logger: LogServiceAbstract) {}
+  constructor() {}
 
-  ngOnInit(): void {
-    throw new Error('TEST1');
-  }
+  ngOnInit(): void {}
 }

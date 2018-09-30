@@ -7,6 +7,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
 import { ConfigLoader, ConfigModule, ConfigService } from '@ngx-config/core';
 import { ConfigHttpLoader } from '@ngx-config/http-loader';
 import {
@@ -49,6 +50,7 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
   imports: [
     Angulartics2Module.forRoot([Angulartics2GoogleTagManager]),
     AppRoutingModule,
+    AuthModule,
     BrowserAnimationsModule,
     BrowserModule,
     ConfigModule.forRoot({
@@ -56,14 +58,17 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
       useFactory: configFactory,
       deps: [HttpClient],
     }),
+    CoreModule,
     FormsModule,
     HttpClientModule,
+    LayoutModule,
     LoggerModule.forRoot({
       level: environment.production ? NgxLoggerLevel.OFF : NgxLoggerLevel.TRACE,
       serverLogLevel: NgxLoggerLevel.ERROR,
     }),
     Ng2UiAuthModule.forRoot(AuthConfig),
     ReactiveFormsModule,
+    RouterModule,
     ToastrModule.forRoot({
       enableHtml: true,
       disableTimeOut: true,
@@ -78,10 +83,6 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
         deps: [HttpClient],
       },
     }),
-
-    AuthModule,
-    CoreModule,
-    LayoutModule,
   ],
   declarations: [AppComponent],
   providers: [

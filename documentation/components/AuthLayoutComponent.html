@@ -240,7 +240,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/layout/component/auth/auth.component.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/layout/component/auth/auth.component.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -278,7 +278,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/layout/component/auth/auth.component.ts:25</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/layout/component/auth/auth.component.ts:23</a></div>
                             </td>
                         </tr>
 
@@ -348,14 +348,12 @@ import { ConfigService } from &#x27;@ngx-config/core&#x27;;
 @Component({
   selector: &#x27;app-auth-layout&#x27;,
   templateUrl: &#x27;./auth.component.html&#x27;,
-  styleUrls: [&#x27;./auth.component.scss&#x27;]
+  styleUrls: [&#x27;./auth.component.scss&#x27;],
 })
 export class AuthLayoutComponent implements OnInit {
   public heroImageUri: string;
 
-  constructor(
-    private _configService: ConfigService
-  ) {
+  constructor(private _configService: ConfigService) {
     this._configure();
   }
 
@@ -366,8 +364,7 @@ export class AuthLayoutComponent implements OnInit {
     this.heroImageUri &#x3D; &#x60;${config.auth.heroImageUri}&#x60;;
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 }
 </code></pre>
     </div>
