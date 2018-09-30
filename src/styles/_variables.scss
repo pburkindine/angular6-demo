@@ -1,3 +1,6 @@
+@import '~@angular/material/theming';
+
+// Bootstrap breakpoints as a map
 $grid-breakpoints: (
   xs: 0,
   sm: 576px,
@@ -5,3 +8,11 @@ $grid-breakpoints: (
   lg: 992px,
   xl: 1200px
 );
+
+$app-primary: mat-palette($mat-grey);
+$app-accent: mat-palette($mat-light-blue);
+$app-warn: mat-palette($mat-pink);
+$primary: mat-color($app-primary);
+$accent: mat-color($app-accent);
+$warn: mat-color($app-warn);
+$white: #fff;

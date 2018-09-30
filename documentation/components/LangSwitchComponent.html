@@ -38,7 +38,7 @@
 
 <ol class="breadcrumb">
   <li>Components</li>
-  <li>HomeComponent</li>
+  <li>LangSwitchComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -61,7 +61,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/home/component/home/home.component.ts</code>
+    <code>src/app/core/component/lang-switch/lang-switch.component.ts</code>
 </p>
 
 
@@ -91,19 +91,19 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-home</code></td>
+                <td class="col-md-9"><code>app-lang-switch</code></td>
             </tr>
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>home.component.scss</code></td>
+                <td class="col-md-9"><code>lang-switch.component.scss</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./home.component.html</code></td>
+                <td class="col-md-9"><code>./lang-switch.component.html</code></td>
             </tr>
 
 
@@ -125,7 +125,12 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                    <span class="modifier">Public</span>
                                 <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#setLang">setLang</a>
                             </li>
                         </ul>
                     </td>
@@ -145,15 +150,45 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor()</code>
+<code>constructor(_translateService: TranslateService)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/home/component/home/home.component.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/core/component/lang-switch/lang-switch.component.ts:9</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>_translateService</td>
+                                                  
+                                                        <td>
+                                                                    <code>TranslateService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
@@ -174,6 +209,7 @@
                         <a name="ngOnInit"></a>
                         <span class="name">
                             <b>
+                                <span class="modifier">Public</span>
                             ngOnInit
                             </b>
                             <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
@@ -182,14 +218,15 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-<code>ngOnInit()</code>
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>ngOnInit()</code>
                     </td>
                 </tr>
 
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/home/component/home/home.component.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/core/component/lang-switch/lang-switch.component.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -205,6 +242,77 @@
                 </tr>
             </tbody>
         </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="setLang"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            setLang
+                            </b>
+                            <a href="#setLang"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>setLang(lang: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/core/component/lang-switch/lang-switch.component.ts:16</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>lang</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 </section>
 
 
@@ -213,24 +321,32 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { TranslateService } from &#x27;@ngx-translate/core&#x27;;
 
 @Component({
-  selector: &#x27;app-home&#x27;,
-  templateUrl: &#x27;./home.component.html&#x27;,
-  styleUrls: [&#x27;./home.component.scss&#x27;],
+  selector: &#x27;app-lang-switch&#x27;,
+  templateUrl: &#x27;./lang-switch.component.html&#x27;,
+  styleUrls: [&#x27;./lang-switch.component.scss&#x27;]
 })
-export class HomeComponent implements OnInit {
-  constructor() {}
+export class LangSwitchComponent implements OnInit {
+  constructor(
+    private _translateService: TranslateService
+  ) { }
 
-  ngOnInit(): void {}
+  public ngOnInit(): void {}
+
+  public setLang(lang: string): void {
+    this._translateService.use(lang);
+  }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;p&gt;
-  home works!
-&lt;/p&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;LangSwitch__wrapper text-right pt-2 pr-3&quot;&gt;
+  &lt;a class&#x3D;&quot;clickable&quot; (click)&#x3D;&quot;setLang(&#x27;en&#x27;)&quot;&gt;en&lt;/a&gt; |
+  &lt;a class&#x3D;&quot;clickable&quot; (click)&#x3D;&quot;setLang(&#x27;es&#x27;)&quot;&gt;es&lt;/a&gt;
+&lt;/div&gt;
 </code></pre>
     </div>
 
@@ -259,10 +375,10 @@ export class HomeComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><p>  home works!</p></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="LangSwitch__wrapper text-right pt-2 pr-3">  <a class="clickable" (click)="setLang(\'en\')">en</a> |  <a class="clickable" (click)="setLang(\'es\')">es</a></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthLayoutComponent', 'selector': 'app-auth-layout'},{'name': 'BackToLoginComponent', 'selector': 'app-back-to-login'},{'name': 'ErrorPageComponent', 'selector': 'app-error-page'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LangSwitchComponent', 'selector': 'app-lang-switch'},{'name': 'LoginPageComponent', 'selector': 'app-login'},{'name': 'MainLayoutComponent', 'selector': 'app-main-layout'},{'name': 'RegisterPageComponent', 'selector': 'app-register'},{'name': 'TopnavComponent', 'selector': 'app-topnav'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'HomeComponent'};
+    var ACTUAL_COMPONENT = {'name': 'LangSwitchComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -296,7 +412,7 @@ export class HomeComponent implements OnInit {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'HomeComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'LangSwitchComponent.html';
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

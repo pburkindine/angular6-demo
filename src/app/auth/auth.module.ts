@@ -13,6 +13,7 @@ import {
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
+import { CoreModule } from '../core/core.module';
 import { LayoutModule } from '../layout/layout.module';
 import { AuthRoutingModule } from './auth.routing.module';
 import { LoginPageComponent } from './component/login/login.component';
@@ -22,6 +23,7 @@ import { RegisterPageComponent } from './component/register/register.component';
   imports: [
     AuthRoutingModule,
     CommonModule,
+    CoreModule,
     FormsModule,
     LayoutModule,
     MatButtonModule,

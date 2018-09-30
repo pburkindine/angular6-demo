@@ -40,10 +40,6 @@ export class AppComponent implements OnInit {
 
   protected _configureTranslation(): void {
     this._translateService.setDefaultLang('en');
-    this.setLang('en');
-  }
-
-  public setLang(lang: string): void {
-    this._translateService.use(lang);
+    this._translateService.use('en');
   }
 }

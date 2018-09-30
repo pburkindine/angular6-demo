@@ -8,6 +8,7 @@ import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/internal/operators';
 import { ApiResponse } from '../../model/payload/api-response.model';
 import { ErrorResponse } from '../../model/payload/error-response.model';
+import { UserService } from '../user.service';
 
 @Injectable({
   providedIn: 'root',
@@ -20,7 +21,7 @@ export class LogoutService {
     private _configService: ConfigService,
     private _http: HttpClient,
     private _router: Router,
-    private _toastr: ToastrService
+    private _userService: UserService
   ) {
     this._configure();
   }
@@ -32,10 +33,20 @@ export class LogoutService {
     this._logoutUri = `${config.core.apiBaseUri}${config.auth.logoutUri}`;
   }
 
-  public logout(): Observable<ApiResponse> {
+  public logout(): void {
     this._authService.logout();
-    this._router.navigate(['auth', 'login']);
+    this._authService.removeToken();
+    this._userService.clearUser();
 
-    return this._http.post<ApiResponse>(this._logoutUri, null);
+    this._http
+      .post<ApiResponse>(this._logoutUri, null)
+      .subscribe(
+        this._completeHandler.bind(this),
+        this._completeHandler.bind(this)
+      );
+  }
+
+  protected _completeHandler(): void {
+    this._router.navigate(['auth', 'login']);
   }
 }

@@ -68,6 +68,21 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#_key">_key</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -77,6 +92,10 @@
                 <tr>
                     <td class="col-md-4">
                         <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#clearUser">clearUser</a>
+                            </li>
                             <li>
                                     <span class="modifier">Public</span>
                                 <a href="#getUser">getUser</a>
@@ -107,6 +126,46 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="clearUser"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            clearUser
+                            </b>
+                            <a href="#clearUser"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>clearUser()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/core/service/user.service.ts:20</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="getUser"></a>
                         <span class="name">
                             <b>
@@ -127,7 +186,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/core/service/user.service.ts:10</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/core/service/user.service.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -167,7 +226,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/core/service/user.service.ts:14</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/core/service/user.service.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -216,6 +275,52 @@
         </table>
 </section>
 
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="_key"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            _key
+                            </b>
+                            <a href="#_key"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>_key:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;user&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/core/service/user.service.ts:10</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
 
     </div>
 
@@ -230,12 +335,18 @@ import { User } from &#x27;../model/user.model&#x27;;
   providedIn: &#x27;root&#x27;,
 })
 export class UserService {
+  private _key: string &#x3D; &#x27;user&#x27;;
+
   public getUser(): User {
-    return Deserialize(sessionStorage.getItem(&#x27;user&#x27;));
+    return Deserialize(sessionStorage.getItem(this._key));
   }
 
   public setUser(user: User): void {
-    sessionStorage.setItem(&#x27;user&#x27;, JSON.stringify(Serialize(user)));
+    sessionStorage.setItem(this._key, JSON.stringify(Serialize(user)));
+  }
+
+  public clearUser(): void {
+    sessionStorage.removeItem(this._key);
   }
 }
 </code></pre>

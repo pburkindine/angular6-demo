@@ -1,0 +1,25 @@
+<nav class="navbar
+            navbar-light"
+>
+  <a class="navbar-brand mr-auto" href="#">{{ 'siteTitle' | translate }}</a>
+  <app-lang-switch class="navbar-lang-switch mr-3"></app-lang-switch>
+  <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navItems"
+      aria-controls="navItems"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navItems">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item text-right">
+        <a class="clickable" (click)="logout()">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>

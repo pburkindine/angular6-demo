@@ -1,0 +1,11 @@
+@import 'variables';
+
+.navbar {
+  background-color: $primary;
+  color: $white;
+}
+
+.navbar-brand,
+.navbar-toggler {
+  color: $white !important;
+}

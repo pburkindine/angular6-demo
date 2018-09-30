@@ -7,6 +7,7 @@ import { ConfigService } from '@ngx-config/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 import { AuthLayoutComponent } from './auth.component';
+import { CoreModule } from '../../../core/core.module';
 
 let configServiceStub: jasmine.SpyObj<ConfigService>;
 
@@ -30,7 +31,12 @@ describe('AuthLayoutComponent', () => {
     createStubs();
 
     TestBed.configureTestingModule({
-      imports: [MatCardModule, RouterTestingModule, TranslateModule.forRoot()],
+      imports: [
+        CoreModule,
+        MatCardModule,
+        RouterTestingModule,
+        TranslateModule.forRoot(),
+      ],
       declarations: [AuthLayoutComponent],
       providers: [
         { provide: ConfigService, useValue: configServiceStub },

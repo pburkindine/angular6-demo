@@ -75,12 +75,19 @@
 import { RouterModule, Routes } from &#x27;@angular/router&#x27;;
 
 import { HomeComponent } from &#x27;./component/home/home.component&#x27;;
+import { MainLayoutComponent } from &#x27;../layout/component/main/main.component&#x27;;
 
 const homeRoutes: Routes &#x3D; [
   {
     path: &#x27;&#x27;,
-    pathMatch: &#x27;full&#x27;,
-    component: HomeComponent,
+    component: MainLayoutComponent,
+    children: [
+      {
+        path: &#x27;&#x27;,
+        pathMatch: &#x27;full&#x27;,
+        component: HomeComponent,
+      }
+    ]
   },
 ];
 

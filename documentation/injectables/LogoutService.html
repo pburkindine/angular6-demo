@@ -94,6 +94,10 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Protected</span>
+                                <a href="#_completeHandler">_completeHandler</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
                                 <a href="#_configure">_configure</a>
                             </li>
                             <li>
@@ -118,12 +122,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(_authService: AuthService, _configService: ConfigService, _http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>, _router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, _toastr: ToastrService)</code>
+<code>constructor(_authService: AuthService, _configService: ConfigService, _http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>, _router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, _userService: <a href="../injectables/UserService.html">UserService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/core/service/auth/logout.service.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/core/service/auth/logout.service.ts:17</a></div>
                             </td>
                         </tr>
 
@@ -189,10 +193,10 @@
                                                     
                                                 </tr>
                                                 <tr>
-                                                        <td>_toastr</td>
+                                                        <td>_userService</td>
                                                   
                                                         <td>
-                                                                    <code>ToastrService</code>
+                                                                    <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -218,6 +222,46 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="_completeHandler"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Protected</span>
+                            _completeHandler
+                            </b>
+                            <a href="#_completeHandler"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>_completeHandler()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/core/service/auth/logout.service.ts:48</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="_configure"></a>
                         <span class="name">
                             <b>
@@ -238,7 +282,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/core/service/auth/logout.service.ts:28</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/core/service/auth/logout.service.ts:29</a></div>
                             </td>
                         </tr>
 
@@ -278,7 +322,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/core/service/auth/logout.service.ts:35</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/core/service/auth/logout.service.ts:36</a></div>
                             </td>
                         </tr>
 
@@ -287,7 +331,7 @@
                     <td class="col-md-4">
 
                             <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../interfaces/ApiResponse.html" target="_self" >Observable&lt;ApiResponse&gt;</a></code>
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
                             </div>
                     </td>
@@ -329,7 +373,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/core/service/auth/logout.service.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/core/service/auth/logout.service.ts:17</a></div>
                             </td>
                         </tr>
 
@@ -352,6 +396,7 @@ import { Observable, of } from &#x27;rxjs&#x27;;
 import { catchError, tap } from &#x27;rxjs/internal/operators&#x27;;
 import { ApiResponse } from &#x27;../../model/payload/api-response.model&#x27;;
 import { ErrorResponse } from &#x27;../../model/payload/error-response.model&#x27;;
+import { UserService } from &#x27;../user.service&#x27;;
 
 @Injectable({
   providedIn: &#x27;root&#x27;,
@@ -364,7 +409,7 @@ export class LogoutService {
     private _configService: ConfigService,
     private _http: HttpClient,
     private _router: Router,
-    private _toastr: ToastrService
+    private _userService: UserService,
   ) {
     this._configure();
   }
@@ -376,11 +421,20 @@ export class LogoutService {
     this._logoutUri &#x3D; &#x60;${config.core.apiBaseUri}${config.auth.logoutUri}&#x60;;
   }
 
-  public logout(): Observable&lt;ApiResponse&gt; {
+  public logout(): void {
     this._authService.logout();
-    this._router.navigate([&#x27;auth&#x27;, &#x27;login&#x27;]);
+    this._authService.removeToken();
+    this._userService.clearUser();
 
-    return this._http.post&lt;ApiResponse&gt;(this._logoutUri, null);
+    this._http.post&lt;ApiResponse&gt;(this._logoutUri, null)
+      .subscribe(
+        this._completeHandler.bind(this),
+        this._completeHandler.bind(this),
+      );
+  }
+
+  protected _completeHandler(): void {
+    this._router.navigate([&#x27;auth&#x27;, &#x27;login&#x27;]);
   }
 }
 </code></pre>

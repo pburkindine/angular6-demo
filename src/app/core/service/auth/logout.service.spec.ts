@@ -25,7 +25,10 @@ const testConfig: any = {
 };
 
 function createStubs(): void {
-  authServiceStub = jasmine.createSpyObj('AuthService', ['logout']);
+  authServiceStub = jasmine.createSpyObj('AuthService', [
+    'logout',
+    'removeToken',
+  ]);
   configServiceStub = jasmine.createSpyObj('ConfigService', ['getSettings']);
   configServiceStub.getSettings.and.returnValue(testConfig);
   httpStub = jasmine.createSpyObj('HttpClient', ['post']);
@@ -91,5 +94,9 @@ describe('LogoutService', () => {
     service.logout();
     expect(routerStub.navigate.calls.count()).toEqual(1);
     expect(routerStub.navigate.calls.argsFor(0)).toEqual([expectedRoute]);
+  });
+
+  it('should clear the sessionStorage of the user', () => {
+    pending('TODO - No time for this tonight');
   });
 });
