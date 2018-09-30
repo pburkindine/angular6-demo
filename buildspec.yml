@@ -6,13 +6,11 @@ environment_variables:
 phases:
   install:
     commands:
-       - echo Installing node
-       - curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-       - apt-get install -y nodejs
-
+      - echo Installing node
+      - curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+      - apt-get install -y nodejs
       - echo Pulling trion/ng-cli-e2e
       - docker pull trion/ng-cli-e2e
-
       - echo Installing yarn
       - npm install -g yarn
       - echo Installing source NPM dependencies...
