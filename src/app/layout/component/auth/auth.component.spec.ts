@@ -6,8 +6,8 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { ConfigService } from '@ngx-config/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
-import { AuthLayoutComponent } from './auth.component';
 import { CoreModule } from '../../../core/core.module';
+import { AuthLayoutComponent } from './auth.component';
 
 let configServiceStub: jasmine.SpyObj<ConfigService>;
 

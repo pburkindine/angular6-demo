@@ -143,13 +143,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         <a href="modules/LayoutModule.html" data-type="entity-link">LayoutModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                    ${ isNormalMode ? 'data-target="#components-links-module-LayoutModule-d3f95fd3b4c0a442b287ec5088ea44a4"' : 'data-target="#xs-components-links-module-LayoutModule-d3f95fd3b4c0a442b287ec5088ea44a4"' }>
+                                    ${ isNormalMode ? 'data-target="#components-links-module-LayoutModule-088f5607457c77da9ea7db6683b4b870"' : 'data-target="#xs-components-links-module-LayoutModule-088f5607457c77da9ea7db6683b4b870"' }>
                                     <span class="icon ion-md-cog"></span>
                                     <span>Components</span>
                                     <span class="icon ion-ios-arrow-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                    ${ isNormalMode ? 'id="components-links-module-LayoutModule-d3f95fd3b4c0a442b287ec5088ea44a4"' : 'id="xs-components-links-module-LayoutModule-d3f95fd3b4c0a442b287ec5088ea44a4"' }>
+                                    ${ isNormalMode ? 'id="components-links-module-LayoutModule-088f5607457c77da9ea7db6683b4b870"' : 'id="xs-components-links-module-LayoutModule-088f5607457c77da9ea7db6683b4b870"' }>
                                         <li class="link">
                                             <a href="components/AuthLayoutComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">AuthLayoutComponent</a>
                                         </li>

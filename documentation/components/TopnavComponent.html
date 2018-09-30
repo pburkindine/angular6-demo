@@ -226,7 +226,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/layout/component/topnav/topnav.component.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/layout/component/topnav/topnav.component.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -266,7 +266,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/layout/component/topnav/topnav.component.ts:15</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/layout/component/topnav/topnav.component.ts:13</a></div>
                             </td>
                         </tr>
 
@@ -296,15 +296,12 @@ import { LogoutService } from &#x27;../../../core/service/auth/logout.service&#x
 @Component({
   selector: &#x27;app-topnav&#x27;,
   templateUrl: &#x27;./topnav.component.html&#x27;,
-  styleUrls: [&#x27;./topnav.component.scss&#x27;]
+  styleUrls: [&#x27;./topnav.component.scss&#x27;],
 })
 export class TopnavComponent implements OnInit {
-  constructor(
-    private _logoutService: LogoutService,
-  ) { }
+  constructor(private _logoutService: LogoutService) {}
 
-  public ngOnInit(): void {
-  }
+  public ngOnInit(): void {}
 
   public logout(): void {
     this._logoutService.logout();

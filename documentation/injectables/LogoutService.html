@@ -242,7 +242,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/core/service/auth/logout.service.ts:48</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/core/service/auth/logout.service.ts:49</a></div>
                             </td>
                         </tr>
 
@@ -409,7 +409,7 @@ export class LogoutService {
     private _configService: ConfigService,
     private _http: HttpClient,
     private _router: Router,
-    private _userService: UserService,
+    private _userService: UserService
   ) {
     this._configure();
   }
@@ -426,10 +426,11 @@ export class LogoutService {
     this._authService.removeToken();
     this._userService.clearUser();
 
-    this._http.post&lt;ApiResponse&gt;(this._logoutUri, null)
+    this._http
+      .post&lt;ApiResponse&gt;(this._logoutUri, null)
       .subscribe(
         this._completeHandler.bind(this),
-        this._completeHandler.bind(this),
+        this._completeHandler.bind(this)
       );
   }
 

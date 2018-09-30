@@ -6,7 +6,7 @@
   "defaultSeverity": "error",
   "rules": {
     "font-weight-notation": ["numeric"],
-    "selector-class-pattern": false,
+    "selector-class-pattern": ["[A-Za-z_-]*"],
     "selector-max-compound-selectors": 4,
     "max-nesting-depth": 2
   }
