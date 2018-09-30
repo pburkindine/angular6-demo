@@ -1,6 +1,6 @@
 {
   "production": false,
   "core": {
-    "apiBaseUri": "http://localhost:8080"
+    "apiBaseUri": "http://angular6demoapi-env.i6kpqg7an2.us-east-2.elasticbeanstalk.com/api"
   }
 }

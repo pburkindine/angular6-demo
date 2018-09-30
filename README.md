@@ -25,7 +25,7 @@ OutdatedBrowser is used to redirect users of old browsers.  Compodoc provides do
 
 # Pipeline
 
-Code is deployed CI/CD using GitHub and AWS CodePipline/CodeBuild.
+Code is deployed CI/CD using AWS CodePipline/CodeBuild.
 
 The backend is deployed to an EC2 using Elastic Beanstalk, and the frontend
 is exposed in an S3 bucket.
@@ -34,8 +34,8 @@ Strict linting of TypeScript, SCSS and HTML in the front-end
 and ES6 in the backend, as well as unit and e2e testing,
 enforce quality measures at pre-commit and in the pipeline.
 
-This integration stems from the AWS QuickStart:
-https://github.com/aws-quickstart/quickstart-git2s3
+NOTE: There is no effort made at this time to implement a config.json builder,
+runtime config.json is committed to the repository
 
 # Instructions for Use
 ** Please note that this project uses yarn and that package-lock.json is in

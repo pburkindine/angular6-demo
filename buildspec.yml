@@ -14,13 +14,12 @@ phases:
       - echo Installing yarn
       - npm install -g yarn
       - echo Installing source NPM dependencies...
-      - yarn
       - yarn global add @angular/cli
   pre_build:
     commands:
       - npm run lint
-      - docker container run -u $(id -u) --rm --mount src=`pwd`,target=/app,type=bind trion/ng-cli-e2e ng test --watch false --single-run true --code-coverage true --sourcemaps false
-      - docker container run -u $(id -u) --rm --mount src=`pwd`,target=/app,type=bind trion/ng-cli-e2e ng e2e
+      - docker container run -u $(id -u) --rm --mount src=`pwd`,target=/app,type=bind trion/ng-cli-e2e rm -rf node_modules && npm install -g yarn && yarn && ng test --watch false --browsers=ChromeHeadlessCI
+      - docker container run -u $(id -u) --rm --mount src=`pwd`,target=/app,type=bind trion/ng-cli-e2e rm -rf node_modules && npm install -g yarn && yarn install && ng e2e
   build:
     commands:
       - echo Build started on `date`
