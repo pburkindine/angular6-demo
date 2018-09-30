@@ -4,14 +4,14 @@ In this project I am demonstrating my current patterns and understanding in the
 MEAN stack composed of Angular 6, Angular Material, express,
 and MongoDB.
 
-# Back-end
+# Backend
 
 In this application, an express REST API backed by MongoDB exposes a store
 selling sporks (it's a spoon and fork combined!).
  
 Passport and JWT are used for authentication against MongoDB and call authentication.
 
-# Front-end
+# Frontend
 
 An Angular Material front-end consumes the API.  The customer registers, builds a cart, then checks out using Stripe.
 
@@ -25,9 +25,14 @@ OutdatedBrowser is used to redirect users of old browsers.  Compodoc provides do
 
 # Pipeline
 
-Code is deployed CI/CD as two AWS "hot" lambdas using AWS CodePipeline and CodeDeploy.
+Code is deployed CI/CD using GitHub and AWS CodePipline/CodeBuild.
+
+The backend is deployed to an EC2 using Elastic Beanstalk, and the frontend
+is exposed in an S3 bucket.
+
 Strict linting of TypeScript, SCSS and HTML in the front-end
-and ES6 in the backend, as well as unit and e2e testing, enforce quality at pre-commit and in the pipeline.
+and ES6 in the backend, as well as unit and e2e testing,
+enforce quality measures at pre-commit and in the pipeline.
 
 This integration stems from the AWS QuickStart:
 https://github.com/aws-quickstart/quickstart-git2s3

@@ -37,20 +37,23 @@
 <p>In this project I am demonstrating my current patterns and understanding in the
 MEAN stack composed of Angular 6, Angular Material, express,
 and MongoDB.</p>
-<h1 id="back-end">Back-end</h1>
+<h1 id="backend">Backend</h1>
 <p>In this application, an express REST API backed by MongoDB exposes a store
 selling sporks (it&#39;s a spoon and fork combined!).</p>
 <p>Passport and JWT are used for authentication against MongoDB and call authentication.</p>
-<h1 id="front-end">Front-end</h1>
+<h1 id="frontend">Frontend</h1>
 <p>An Angular Material front-end consumes the API.  The customer registers, builds a cart, then checks out using Stripe.</p>
 <p>In the Angular app, we use @ngrx/store and ChangeDetectionStrategy.Push for performance, immutability and stability.</p>
 <p>ngx-translate and ngx-config provide runtime configuration and translation.</p>
 <p>ngx-logger feeds errors and events to an API endpoint to be consumed, and angulartics2 feeds data to Google Analytics.</p>
 <p>OutdatedBrowser is used to redirect users of old browsers.  Compodoc provides documentation.</p>
 <h1 id="pipeline">Pipeline</h1>
-<p>Code is deployed CI/CD as two AWS &quot;hot&quot; lambdas using AWS CodePipeline and CodeDeploy.
-Strict linting of TypeScript, SCSS and HTML in the front-end
-and ES6 in the backend, as well as unit and e2e testing, enforce quality at pre-commit and in the pipeline.</p>
+<p>Code is deployed CI/CD using GitHub and AWS CodePipline/CodeBuild.</p>
+<p>The backend is deployed to an EC2 using Elastic Beanstalk, and the frontend
+is exposed in an S3 bucket.</p>
+<p>Strict linting of TypeScript, SCSS and HTML in the front-end
+and ES6 in the backend, as well as unit and e2e testing,
+enforce quality measures at pre-commit and in the pipeline.</p>
 <p>This integration stems from the AWS QuickStart:
 <a href="https://github.com/aws-quickstart/quickstart-git2s3">https://github.com/aws-quickstart/quickstart-git2s3</a></p>
 <h1 id="instructions-for-use">Instructions for Use</h1>
