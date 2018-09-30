@@ -1,8 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 
-import { UserFactory } from './user.factory';
-import { User } from '../../model/user.model';
 import { LoginResult } from '../../model/payload/login-result.model';
+import { User } from '../../model/user.model';
+import { UserFactory } from './user.factory';
 
 describe('UserFactory', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
@@ -15,11 +15,13 @@ describe('UserFactory', () => {
   it('should create a user from the response payload with expected properties', () => {
     const service: UserFactory = TestBed.get(UserFactory);
 
+    // tslint:disable:max-line-length
     const payload: LoginResult = {
       token:
         'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiUGV0ZSBCdXJraW5kaW5lIiwiZW1haWwiOiJwYnVya2luZDExM0BnbWFpbC5jb20iLCJpYXQiOjE1MzgzMzgzMDMsImV4cCI6MTUzODM0MDEwM30.VDIDmkY4nUVQIU6yrpCzlfh4MaeOzoFbKrVrz5YkuKY',
       lastLogin: '2018-09-30T19:52:56.041Z',
     };
+    // tslint:enable:max-line-length
 
     const user: User = service.getFromPayload(payload);
     expect(user.email).toBe('pburkind113@gmail.com');

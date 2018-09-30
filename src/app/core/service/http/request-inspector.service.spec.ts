@@ -1,6 +1,6 @@
+import { HttpRequest } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 import { RequestInspectorService } from './request-inspector.service';
-import { HttpRequest } from '@angular/common/http';
 
 describe('RequestInspectorService', () => {
   beforeEach(() => {

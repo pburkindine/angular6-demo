@@ -424,7 +424,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/core/model/user.model.ts:20</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/core/model/user.model.ts:25</a></div>
                                 </td>
                             </tr>
 
@@ -446,7 +446,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/core/model/user.model.ts:24</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/core/model/user.model.ts:29</a></div>
                                 </td>
                             </tr>
 
@@ -468,7 +468,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/core/model/user.model.ts:28</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/core/model/user.model.ts:33</a></div>
                                 </td>
                             </tr>
 
@@ -490,7 +490,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/core/model/user.model.ts:32</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/core/model/user.model.ts:37</a></div>
                                 </td>
                             </tr>
 
@@ -513,7 +513,12 @@ export class User {
   @autoserialize
   private readonly _password?: string;
 
-  constructor(email: string, name: string, lastLogin?: Date, password?: string) {
+  constructor(
+    email: string,
+    name: string,
+    lastLogin?: Date,
+    password?: string
+  ) {
     this._email &#x3D; email;
     this._lastLogin &#x3D; lastLogin;
     this._name &#x3D; name;

@@ -359,7 +359,7 @@ import { User } from &#x27;../../core/model/user.model&#x27;;
 import { UserFactory } from &#x27;../../core/service/factory/user.factory&#x27;;
 
 @Injectable({
-  providedIn: &#x27;root&#x27;
+  providedIn: &#x27;root&#x27;,
 })
 export class RegisterService {
   private _registerUri: string;
@@ -367,7 +367,7 @@ export class RegisterService {
   constructor(
     private _configService: ConfigService,
     private _http: HttpClient,
-    private _userFactory: UserFactory,
+    private _userFactory: UserFactory
   ) {
     this._configure();
   }
@@ -380,7 +380,10 @@ export class RegisterService {
   }
 
   public register(user: User): Observable&lt;ApiResponse&gt; {
-    return this._http.post&lt;ApiResponse&gt;(this._registerUri, this._userFactory.getPayload(user));
+    return this._http.post&lt;ApiResponse&gt;(
+      this._registerUri,
+      this._userFactory.getPayload(user)
+    );
   }
 }
 </code></pre>

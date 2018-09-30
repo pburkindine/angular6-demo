@@ -359,7 +359,6 @@ import { LogResponseInterceptor } from &#x27;./core/service/interceptor/log-resp
 import { TimingInterceptor } from &#x27;./core/service/interceptor/timing.interceptor.service&#x27;;
 import { LogService } from &#x27;./core/service/log.service&#x27;;
 import { LayoutModule } from &#x27;./layout/layout.module&#x27;;
-import { AuthRoutingModule } from &#x27;./auth/auth.routing.module&#x27;;
 
 export function configFactory(http: HttpClient): ConfigLoader {
   return new ConfigHttpLoader(http, &#x27;./assets/config.json&#x27;);

@@ -4,9 +4,9 @@ import { MatCardModule } from '@angular/material';
 import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
 import { ConfigService } from '@ngx-config/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 import { AuthLayoutComponent } from './auth.component';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 let configServiceStub: jasmine.SpyObj<ConfigService>;
 

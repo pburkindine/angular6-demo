@@ -104,7 +104,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/auth/service/factory/form/register.form.factory.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/auth/service/factory/form/register.form.factory.ts:13</a></div>
                             </td>
                         </tr>
 
@@ -171,7 +171,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/auth/service/factory/form/register.form.factory.ts:13</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/auth/service/factory/form/register.form.factory.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -195,16 +195,19 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
-import { FormBuilder, FormControl, FormGroup, Validators } from &#x27;@angular/forms&#x27;;
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from &#x27;@angular/forms&#x27;;
 import { CustomValidators } from &#x27;ng2-validation&#x27;;
 
 @Injectable({
-  providedIn: &#x27;root&#x27;
+  providedIn: &#x27;root&#x27;,
 })
 export class RegisterFormFactory {
-  constructor(
-    private _formBuilder: FormBuilder,
-  ) {}
+  constructor(private _formBuilder: FormBuilder) {}
 
   public getForm(): FormGroup {
     const newPasswordControl: FormControl &#x3D; this._formBuilder.control(null, [
@@ -212,10 +215,10 @@ export class RegisterFormFactory {
       Validators.maxLength(255),
     ]);
 
-    const confirmPasswordControl: FormControl &#x3D; this._formBuilder.control(null, [
-      Validators.required,
-      CustomValidators.equalTo(newPasswordControl),
-    ]);
+    const confirmPasswordControl: FormControl &#x3D; this._formBuilder.control(
+      null,
+      [Validators.required, CustomValidators.equalTo(newPasswordControl)]
+    );
 
     return this._formBuilder.group({
       email: this._formBuilder.control(null, [
@@ -227,7 +230,7 @@ export class RegisterFormFactory {
         Validators.maxLength(255),
       ]),
       password: newPasswordControl,
-      confirmPassword: confirmPasswordControl
+      confirmPassword: confirmPasswordControl,
     });
   }
 }

@@ -15,6 +15,7 @@ phases:
       - npm install -g yarn
       - echo Installing source NPM dependencies...
       - yarn global add @angular/cli
+      - yarn
   pre_build:
     commands:
       - yarn run lint

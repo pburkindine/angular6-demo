@@ -387,7 +387,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/auth/component/register/register.component.ts:55</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/auth/component/register/register.component.ts:57</a></div>
                             </td>
                         </tr>
 
@@ -498,7 +498,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/app/auth/component/register/register.component.ts:64</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">src/app/auth/component/register/register.component.ts:66</a></div>
                             </td>
                         </tr>
 
@@ -655,7 +655,7 @@ import { RegisterService } from &#x27;../../service/register.service&#x27;;
 @Component({
   selector: &#x27;app-register&#x27;,
   templateUrl: &#x27;./register.component.html&#x27;,
-  styleUrls: [&#x27;./register.component.scss&#x27;]
+  styleUrls: [&#x27;./register.component.scss&#x27;],
 })
 export class RegisterPageComponent implements OnInit {
   public form: FormGroup;
@@ -666,7 +666,7 @@ export class RegisterPageComponent implements OnInit {
     private _router: Router,
     private _toastr: ToastrService,
     private _userFactory: UserFactory
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.form &#x3D; this._formFactory.getForm();
@@ -691,12 +691,14 @@ export class RegisterPageComponent implements OnInit {
   protected _errorHandler(errorResponse: HttpErrorResponse): void {
     this._logger.devLog(errorResponse.error);
 
-    this._toastr.error(&#x60;Registration error:&lt;br/&gt;${this._getErrorList(errorResponse)}&#x60;);
+    this._toastr.error(
+      &#x60;Registration error:&lt;br/&gt;${this._getErrorList(errorResponse)}&#x60;
+    );
   }
 
   protected _getErrorList(errorResponse: HttpErrorResponse): string {
     let errorList: string &#x3D; &#x27;&lt;ul&gt;&#x27;;
-    Object.values(errorResponse.error).forEach( (error: string) &#x3D;&gt; {
+    Object.values(errorResponse.error).forEach((error: string) &#x3D;&gt; {
       errorList &#x3D; &#x60;${errorList}&lt;li&gt;${error}&lt;/li&gt;&#x60;;
     });
 

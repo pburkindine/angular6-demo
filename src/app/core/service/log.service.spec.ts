@@ -44,7 +44,7 @@ describe('LogService', () => {
     const service: LogService = TestBed.get(LogService);
 
     // tslint:disable-next-line:no-any
-    const expectedValue: any = { msg: 'Test value' };
+    const expectedValue: any = { msg: 'Test value 1' };
 
     service.debug(expectedValue);
     expect(actualLoggerStub.debug.calls.count()).toBe(1);
@@ -61,7 +61,7 @@ describe('LogService', () => {
     const service: LogService = TestBed.get(LogService);
 
     // tslint:disable-next-line:no-any
-    const expectedValue: any = { msg: 'Test value' };
+    const expectedValue: any = { msg: 'Test value 2' };
 
     service.error(expectedValue);
     expect(actualLoggerStub.error.calls.count()).toBe(1);
@@ -72,7 +72,7 @@ describe('LogService', () => {
     const service: LogService = TestBed.get(LogService);
 
     // tslint:disable-next-line:no-any
-    const expectedValue: any = { msg: 'Test value' };
+    const expectedValue: any = { msg: 'Test value 3' };
 
     service.log(expectedValue);
     expect(actualLoggerStub.log.calls.count()).toBe(1);
