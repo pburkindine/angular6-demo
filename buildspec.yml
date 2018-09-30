@@ -6,8 +6,15 @@ environment_variables:
 phases:
   install:
     commands:
-      - apt-get install docker
+      - echo Installing docker
+      - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+      - add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+      - apt-get update
+      - apt-get install -y docker-ce
+
+      - echo Pulling trion/ng-cli-e2e
       - docker pull trion/ng-cli-e2e
+
       - echo Installing yarn
       - npm install -g yarn
       - echo Installing source NPM dependencies...
