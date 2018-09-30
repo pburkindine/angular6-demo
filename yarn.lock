@@ -97,6 +97,10 @@
     "@angular-devkit/core" "0.8.3"
     rxjs "~6.2.0"
 
+"@angular-material-extensions/password-strength@^3.2.0":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@angular-material-extensions/password-strength/-/password-strength-3.2.0.tgz#361995785ad87640fff7317cda3e35ac90a8b0d4"
+
 "@angular/animations@^6.1.0":
   version "6.1.9"
   resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-6.1.9.tgz#1d87469e6f6b89a8713570dfbe97700ea85bd007"
@@ -5884,14 +5888,6 @@ negotiator@0.6.1:
 neo-async@^2.5.0:
   version "2.5.2"
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.5.2.tgz#489105ce7bc54e709d736b195f82135048c50fcc"
-
-ng-password-helper@^5.0.3:
-  version "5.0.3"
-  resolved "https://registry.yarnpkg.com/ng-password-helper/-/ng-password-helper-5.0.3.tgz#994515753624bc059a26083ded3403d726fc0320"
-
-ng2-password-strength-bar@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/ng2-password-strength-bar/-/ng2-password-strength-bar-1.2.1.tgz#d837c37147ca6b1958c63228dbff7dbab085fd9a"
 
 ng2-ui-auth@^9.0.0:
   version "9.0.0"

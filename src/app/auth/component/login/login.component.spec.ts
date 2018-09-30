@@ -36,7 +36,7 @@ import { Observable, of, throwError } from 'rxjs';
 import { LogServiceAbstract } from '../../../core/interface/service/log.service.abstract';
 import { LoginFormFactory } from '../../service/factory/form/login.form.factory';
 import { LoginService } from '../../service/login.service';
-import { LoginComponent } from './login.component';
+import { LoginPageComponent } from './login.component';
 
 // tslint:disable-next-line:no-any
 const translations: any = {
@@ -53,15 +53,6 @@ class TranslateLoaderStub implements TranslateLoader {
     return of(translations);
   }
 }
-
-// tslint:disable
-@Directive({
-  selector: '[routerLink]',
-})
-class DummyRouterLinkDirective {}
-
-class DummyComponent {}
-// tslint:enable
 
 let authServiceStub: jasmine.SpyObj<AuthService>;
 let loginFormFactoryStub: jasmine.SpyObj<LoginFormFactory>;
@@ -90,9 +81,9 @@ function setNegativeLoginResult(expectedError: string = 'error msg'): void {
   loginServiceStub.login.and.callFake(() => throwError({ msg: expectedError }));
 }
 
-describe('LoginComponent', () => {
-  let component: LoginComponent;
-  let fixture: ComponentFixture<LoginComponent>;
+describe('LoginPageComponent', () => {
+  let component: LoginPageComponent;
+  let fixture: ComponentFixture<LoginPageComponent>;
 
   beforeEach(async(() => {
     createStubs();
@@ -108,12 +99,7 @@ describe('LoginComponent', () => {
         MatInputModule,
         MatProgressSpinnerModule,
         ReactiveFormsModule,
-        RouterTestingModule.withRoutes([
-          {
-            path: 'home',
-            component: DummyComponent,
-          },
-        ]),
+        RouterTestingModule,
         TranslateModule.forRoot({
           loader: {
             provide: TranslateLoader,
@@ -121,7 +107,7 @@ describe('LoginComponent', () => {
           },
         }),
       ],
-      declarations: [DummyRouterLinkDirective, LoginComponent],
+      declarations: [LoginPageComponent],
       providers: [
         {
           provide: AuthService,
@@ -150,7 +136,7 @@ describe('LoginComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LoginComponent);
+    fixture = TestBed.createComponent(LoginPageComponent);
     component = fixture.componentInstance;
 
     TestBed.get(TranslateService).use('en');

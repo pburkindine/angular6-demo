@@ -13,9 +13,8 @@ import { LoginService } from '../../service/login.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent implements OnInit {
+export class LoginPageComponent implements OnInit {
   public form: FormGroup;
-  public showSpinner: boolean = false;
 
   constructor(
     private _authService: AuthService,
@@ -32,8 +31,6 @@ export class LoginComponent implements OnInit {
   }
 
   public login(): void {
-    this.showSpinner = true;
-
     this._loginService
       .login(this.form.value.email, this.form.value.password)
       .subscribe(
@@ -43,14 +40,12 @@ export class LoginComponent implements OnInit {
   }
 
   protected _successHandler(): void {
-    this.showSpinner = false;
     this._toastr.success('Logged in...');
     this._router.navigate(['home']);
   }
 
   // tslint:disable-next-line:no-any
   protected _errorHandler(result: any): void {
-    this.showSpinner = false;
     this._logger.devLog(result);
     this._toastr.error('Login error');
   }

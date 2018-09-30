@@ -3,6 +3,7 @@ import * as jwtDecode from 'jwt-decode';
 
 import { JwtPayload } from '../../model/payload/jwt-payload.model';
 import { LoginResult } from '../../model/payload/login-result.model';
+import { UserPayload } from '../../model/payload/user-payload.model';
 import { User } from '../../model/user.model';
 import { DateHelperService } from '../helper/date-helper.service';
 
@@ -11,6 +12,18 @@ import { DateHelperService } from '../helper/date-helper.service';
 })
 export class UserFactory {
   constructor(private _dateHelper: DateHelperService) {}
+
+  public getPayload(user: User): UserPayload {
+    return {
+      name: user.name,
+      email: user.email,
+      password: user.password,
+    };
+  }
+
+  public getFromFormData(formData: UserPayload): User {
+    return this.getUser(formData.email, formData.name, null, formData.password);
+  }
 
   public getFromPayload(payload: LoginResult): User {
     const decodedToken: JwtPayload = jwtDecode(payload.token);

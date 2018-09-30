@@ -11,8 +11,16 @@
     "login": {
       "loginButton": "Login",
       "passwordPlaceholder": "Password",
-      "signUpLink": "Sign Up",
+      "registerLink": "Sign Up",
       "title": "Login"
+    },
+    "register": {
+      "confirmPasswordPlaceholder": "Confirm Password",
+      "loginLink": "Login",
+      "namePlaceholder": "First Last",
+      "passwordPlaceholder": "Password",
+      "registerButton": "Sign Up",
+      "title": "Sign Up"
     }
   }
 }

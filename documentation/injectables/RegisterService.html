@@ -41,7 +41,7 @@
 
 <ol class="breadcrumb">
   <li>Injectables</li>
-  <li>LoginService</li>
+  <li>RegisterService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -59,7 +59,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/auth/service/login.service.ts</code>
+            <code>src/app/auth/service/register.service.ts</code>
         </p>
 
 
@@ -78,7 +78,7 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Private</span>
-                                <a href="#_loginUri">_loginUri</a>
+                                <a href="#_registerUri">_registerUri</a>
                             </li>
                         </ul>
                     </td>
@@ -97,12 +97,8 @@
                                 <a href="#_configure">_configure</a>
                             </li>
                             <li>
-                                    <span class="modifier">Protected</span>
-                                <a href="#_setUser">_setUser</a>
-                            </li>
-                            <li>
                                     <span class="modifier">Public</span>
-                                <a href="#login">login</a>
+                                <a href="#register">register</a>
                             </li>
                         </ul>
                     </td>
@@ -122,12 +118,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(_authService: AuthService, _configService: ConfigService, _logger: <a href="../injectables/LogService.html">LogServiceAbstract</a>, _userFactory: <a href="../injectables/UserFactory.html">UserFactory</a>, _userService: <a href="../injectables/UserService.html">UserService</a>)</code>
+<code>constructor(_configService: ConfigService, _http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>, _userFactory: <a href="../injectables/UserFactory.html">UserFactory</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/auth/service/login.service.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/auth/service/register.service.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -145,18 +141,6 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>_authService</td>
-                                                  
-                                                        <td>
-                                                                    <code>AuthService</code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
                                                         <td>_configService</td>
                                                   
                                                         <td>
@@ -169,10 +153,10 @@
                                                     
                                                 </tr>
                                                 <tr>
-                                                        <td>_logger</td>
+                                                        <td>_http</td>
                                                   
                                                         <td>
-                                                                    <code><a href="../injectables/LogService.html" target="_self" >LogServiceAbstract</a></code>
+                                                                    <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -185,18 +169,6 @@
                                                   
                                                         <td>
                                                                     <code><a href="../injectables/UserFactory.html" target="_self" >UserFactory</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>_userService</td>
-                                                  
-                                                        <td>
-                                                                    <code><a href="../injectables/UserService.html" target="_self" >UserService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -242,7 +214,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/auth/service/login.service.ts:29</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/auth/service/register.service.ts:24</a></div>
                             </td>
                         </tr>
 
@@ -262,98 +234,27 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="_setUser"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Protected</span>
-                            _setUser
-                            </b>
-                            <a href="#_setUser"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>_setUser(result: <a href="../interfaces/LoginResult.html">LoginResult</a>)</code>
-                    </td>
-                </tr>
-
-
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/auth/service/login.service.ts:42</a></div>
-                            </td>
-                        </tr>
-
-
-                <tr>
-                    <td class="col-md-4">
-
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>result</td>
-                                                        <td>
-                                                                    <code><a href="../interfaces/LoginResult.html" target="_self" >LoginResult</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../classes/User.html" target="_self" >Observable&lt;User&gt;</a></code>
-
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="login"></a>
+                        <a name="register"></a>
                         <span class="name">
                             <b>
                                 <span class="modifier">Public</span>
-                            login
+                            register
                             </b>
-                            <a href="#login"><span class="icon ion-ios-link"></span></a>
+                            <a href="#register"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
                             <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>login(email: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, password: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                        <code>register(user: <a href="../classes/User.html">User</a>)</code>
                     </td>
                 </tr>
 
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/auth/service/login.service.ts:36</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/auth/service/register.service.ts:31</a></div>
                             </td>
                         </tr>
 
@@ -373,21 +274,9 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>email</td>
+                                                        <td>user</td>
                                                         <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                                        </td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-
-                                                </tr>
-                                                <tr>
-                                                        <td>password</td>
-                                                        <td>
-                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                                    <code><a href="../classes/User.html" target="_self" >User</a></code>
                                                         </td>
                                                     
                                                     <td>
@@ -402,7 +291,7 @@
                             <div>
                             </div>
                             <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../interfaces/LoginResult.html" target="_self" >Observable&lt;LoginResult&gt;</a></code>
+                                <b>Returns : </b>    <code><a href="../interfaces/ApiResponse.html" target="_self" >Observable&lt;ApiResponse&gt;</a></code>
 
                             </div>
                                 <div class="io-description">
@@ -423,19 +312,19 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="_loginUri"></a>
+                        <a name="_registerUri"></a>
                         <span class="name">
                             <b>
                                 <span class="modifier">Private</span>
-                            _loginUri
+                            _registerUri
                             </b>
-                            <a href="#_loginUri"><span class="icon ion-ios-link"></span></a>
+                            <a href="#_registerUri"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span><code>_loginUri:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>_registerUri:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 </code>
                     </td>
                 </tr>
@@ -447,7 +336,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/auth/service/login.service.ts:17</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/auth/service/register.service.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -460,30 +349,25 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient } from &#x27;@angular/common/http&#x27;;
+import { Injectable } from &#x27;@angular/core&#x27;;
 import { ConfigService } from &#x27;@ngx-config/core&#x27;;
-import { AuthService } from &#x27;ng2-ui-auth&#x27;;
-import { Observable, of } from &#x27;rxjs&#x27;;
-import { map } from &#x27;rxjs/internal/operators&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
 
-import { LogServiceAbstract } from &#x27;../../core/interface/service/log.service.abstract&#x27;;
-import { LoginResult } from &#x27;../../core/model/payload/login-result.model&#x27;;
+import { ApiResponse } from &#x27;../../core/model/payload/api-response.model&#x27;;
 import { User } from &#x27;../../core/model/user.model&#x27;;
 import { UserFactory } from &#x27;../../core/service/factory/user.factory&#x27;;
-import { UserService } from &#x27;../../core/service/user.service&#x27;;
 
 @Injectable({
-  providedIn: &#x27;root&#x27;,
+  providedIn: &#x27;root&#x27;
 })
-export class LoginService {
-  private _loginUri: string;
+export class RegisterService {
+  private _registerUri: string;
 
   constructor(
-    private _authService: AuthService,
     private _configService: ConfigService,
-    private _logger: LogServiceAbstract,
+    private _http: HttpClient,
     private _userFactory: UserFactory,
-    private _userService: UserService
   ) {
     this._configure();
   }
@@ -492,21 +376,11 @@ export class LoginService {
     // tslint:disable-next-line:no-any
     const config: any &#x3D; this._configService.getSettings();
 
-    this._loginUri &#x3D; &#x60;${config.core.apiBaseUri}${config.auth.loginUri}&#x60;;
+    this._registerUri &#x3D; &#x60;${config.core.apiBaseUri}${config.auth.registerUri}&#x60;;
   }
 
-  public login(email: string, password: string): Observable&lt;LoginResult&gt; {
-    return this._authService
-      .login({ email, password }, this._loginUri)
-      .pipe(map(this._setUser.bind(this)));
-  }
-
-  protected _setUser(result: LoginResult): Observable&lt;User&gt; {
-    const user: User &#x3D; this._userFactory.getFromPayload(result);
-    this._logger.devLog(user);
-    this._userService.setUser(user);
-
-    return of(user);
+  public register(user: User): Observable&lt;ApiResponse&gt; {
+    return this._http.post&lt;ApiResponse&gt;(this._registerUri, this._userFactory.getPayload(user));
   }
 }
 </code></pre>
@@ -541,7 +415,7 @@ export class LoginService {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
-            var COMPODOC_CURRENT_PAGE_URL = 'LoginService.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'RegisterService.html';
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

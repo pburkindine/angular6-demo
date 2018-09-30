@@ -27,6 +27,7 @@
     ]
   },
   "dependencies": {
+    "@angular-material-extensions/password-strength": "^3.2.0",
     "@angular/animations": "^6.1.0",
     "@angular/cdk": "^6.4.7",
     "@angular/common": "^6.1.0",
@@ -58,8 +59,6 @@
     "lint-staged": "^7.3.0",
     "lodash": "^4.17.11",
     "moment": "^2.22.2",
-    "ng-password-helper": "^5.0.3",
-    "ng2-password-strength-bar": "^1.2.1",
     "ng2-ui-auth": "^9.0.0",
     "ng2-validation": "^4.2.0",
     "ngx-logger": "^3.3.2",

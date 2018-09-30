@@ -181,14 +181,11 @@
 import * as moment from &#x27;moment&#x27;;
 
 @Injectable({
-  providedIn: &#x27;root&#x27;
+  providedIn: &#x27;root&#x27;,
 })
 export class DateHelperService {
   public getDateFromUtcString(utcDateString: string): Date {
-    const date: Date &#x3D; moment(
-      utcDateString,
-      &#x27;YYYY-MM-DDTHH:mm:ssZa&#x27;
-    ).toDate();
+    const date: Date &#x3D; moment(utcDateString, &#x27;YYYY-MM-DDTHH:mm:ssZa&#x27;).toDate();
 
     if (isNaN(date.getTime())) {
       throw new Error(&#x60;Provided date string is not in expected UTC format&#x60;);

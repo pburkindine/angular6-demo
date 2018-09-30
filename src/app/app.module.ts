@@ -1,3 +1,4 @@
+import { MatPasswordStrengthModule } from '@angular-material-extensions/password-strength';
 import {
   HTTP_INTERCEPTORS,
   HttpClient,
@@ -22,11 +23,14 @@ import { Ng2UiAuthModule } from 'ng2-ui-auth';
 import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
 import { ToastrModule } from 'ngx-toastr';
 
+import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
+import { AuthModule } from './auth/auth.module';
 import { AuthConfig } from './config/auth.config';
 import { CoreModule } from './core/core.module';
 import { LogServiceAbstract } from './core/interface/service/log.service.abstract';
+import { ErrorHandlerService } from './core/service/error-handler.service';
 import { AuthTokenInterceptor } from './core/service/interceptor/auth-token.interceptor.service';
 import { JsonHeaderInterceptor } from './core/service/interceptor/json-header.interceptor.service';
 import { LogRequestInterceptor } from './core/service/interceptor/log-request.interceptor.service';
@@ -34,9 +38,7 @@ import { LogResponseInterceptor } from './core/service/interceptor/log-response.
 import { TimingInterceptor } from './core/service/interceptor/timing.interceptor.service';
 import { LogService } from './core/service/log.service';
 import { LayoutModule } from './layout/layout.module';
-import { AuthModule } from './auth/auth.module';
-import { environment } from '../environments/environment';
-import { ErrorHandlerService } from './core/service/error-handler.service';
+import { AuthRoutingModule } from './auth/auth.routing.module';
 
 export function configFactory(http: HttpClient): ConfigLoader {
   return new ConfigHttpLoader(http, './assets/config.json');
@@ -66,6 +68,7 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
       level: environment.production ? NgxLoggerLevel.OFF : NgxLoggerLevel.TRACE,
       serverLogLevel: NgxLoggerLevel.ERROR,
     }),
+    MatPasswordStrengthModule.forRoot(),
     Ng2UiAuthModule.forRoot(AuthConfig),
     ReactiveFormsModule,
     RouterModule,

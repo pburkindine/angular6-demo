@@ -1,3 +1,4 @@
+import { MatPasswordStrengthModule } from '@angular-material-extensions/password-strength';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -9,28 +10,32 @@ import {
   MatInputModule,
   MatProgressSpinnerModule,
 } from '@angular/material';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { LoginComponent } from './component/login/login.component';
+import { LayoutModule } from '../layout/layout.module';
+import { AuthRoutingModule } from './auth.routing.module';
+import { LoginPageComponent } from './component/login/login.component';
+import { RegisterPageComponent } from './component/register/register.component';
 
 @NgModule({
   imports: [
-    BrowserAnimationsModule,
+    AuthRoutingModule,
     CommonModule,
     FormsModule,
+    LayoutModule,
     MatButtonModule,
     MatCardModule,
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
+    MatPasswordStrengthModule,
     MatProgressSpinnerModule,
     ReactiveFormsModule,
     RouterModule,
     TranslateModule,
   ],
-  declarations: [LoginComponent],
+  declarations: [LoginPageComponent, RegisterPageComponent],
 })
 // tslint:disable-next-line:no-unnecessary-class
 export class AuthModule {}

@@ -319,7 +319,8 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { MatPasswordStrengthModule } from &#x27;@angular-material-extensions/password-strength&#x27;;
+import {
   HTTP_INTERCEPTORS,
   HttpClient,
   HttpClientModule,
@@ -343,11 +344,14 @@ import { Ng2UiAuthModule } from &#x27;ng2-ui-auth&#x27;;
 import { LoggerModule, NgxLoggerLevel } from &#x27;ngx-logger&#x27;;
 import { ToastrModule } from &#x27;ngx-toastr&#x27;;
 
+import { environment } from &#x27;../environments/environment&#x27;;
 import { AppComponent } from &#x27;./app.component&#x27;;
 import { AppRoutingModule } from &#x27;./app.routing.module&#x27;;
+import { AuthModule } from &#x27;./auth/auth.module&#x27;;
 import { AuthConfig } from &#x27;./config/auth.config&#x27;;
 import { CoreModule } from &#x27;./core/core.module&#x27;;
 import { LogServiceAbstract } from &#x27;./core/interface/service/log.service.abstract&#x27;;
+import { ErrorHandlerService } from &#x27;./core/service/error-handler.service&#x27;;
 import { AuthTokenInterceptor } from &#x27;./core/service/interceptor/auth-token.interceptor.service&#x27;;
 import { JsonHeaderInterceptor } from &#x27;./core/service/interceptor/json-header.interceptor.service&#x27;;
 import { LogRequestInterceptor } from &#x27;./core/service/interceptor/log-request.interceptor.service&#x27;;
@@ -355,9 +359,7 @@ import { LogResponseInterceptor } from &#x27;./core/service/interceptor/log-resp
 import { TimingInterceptor } from &#x27;./core/service/interceptor/timing.interceptor.service&#x27;;
 import { LogService } from &#x27;./core/service/log.service&#x27;;
 import { LayoutModule } from &#x27;./layout/layout.module&#x27;;
-import { AuthModule } from &#x27;./auth/auth.module&#x27;;
-import { environment } from &#x27;../environments/environment&#x27;;
-import { ErrorHandlerService } from &#x27;./core/service/error-handler.service&#x27;;
+import { AuthRoutingModule } from &#x27;./auth/auth.routing.module&#x27;;
 
 export function configFactory(http: HttpClient): ConfigLoader {
   return new ConfigHttpLoader(http, &#x27;./assets/config.json&#x27;);
@@ -387,6 +389,7 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
       level: environment.production ? NgxLoggerLevel.OFF : NgxLoggerLevel.TRACE,
       serverLogLevel: NgxLoggerLevel.ERROR,
     }),
+    MatPasswordStrengthModule.forRoot(),
     Ng2UiAuthModule.forRoot(AuthConfig),
     ReactiveFormsModule,
     RouterModule,

@@ -37,7 +37,7 @@
 
 <ol class="breadcrumb">
   <li>Modules</li>
-  <li>AppRoutingModule</li>
+  <li>AuthRoutingModule</li>
 </ol>
 
 
@@ -57,7 +57,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/app.routing.module.ts</code>
+            <code>src/app/auth/auth.routing.module.ts</code>
         </p>
 
 
@@ -72,49 +72,35 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
-import { PreloadAllModules, RouterModule, Routes } from &#x27;@angular/router&#x27;;
+import { RouterModule, Routes } from &#x27;@angular/router&#x27;;
 
-import { LoginPageComponent } from &#x27;./auth/component/login/login.component&#x27;;
-import { RegisterPageComponent } from &#x27;./auth/component/register/register.component&#x27;;
-import { AuthGuard } from &#x27;./core/service/guard/auth.guard&#x27;;
-import { AuthLayoutComponent } from &#x27;./layout/component/auth/auth.component&#x27;;
-import { ErrorPageComponent } from &#x27;./layout/component/error/error.component&#x27;;
+import { AuthLayoutComponent } from &#x27;../layout/component/auth/auth.component&#x27;;
+import { LoginPageComponent } from &#x27;./component/login/login.component&#x27;;
+import { RegisterPageComponent } from &#x27;./component/register/register.component&#x27;;
 
-const appRoutes: Routes &#x3D; [
-  {
-    path: &#x27;auth&#x27;,
-    loadChildren: &#x27;./auth/auth.module#AuthModule&#x27;,
-  },
+const authRoutes: Routes &#x3D; [
   {
     path: &#x27;&#x27;,
-    pathMatch: &#x27;full&#x27;,
-    redirectTo: &#x27;/auth/login&#x27;
-  },
-  {
-    path: &#x27;home&#x27;,
-    canActivate: [AuthGuard],
-    loadChildren: &#x27;./home/home.module#HomeModule&#x27;,
-  },
-  {
-    path: &#x27;**&#x27;,
     component: AuthLayoutComponent,
     children: [
       {
-        path: &#x27;**&#x27;,
-        component: ErrorPageComponent,
+        path: &#x27;login&#x27;,
+        component: LoginPageComponent,
+      },
+      {
+        path: &#x27;register&#x27;,
+        component: RegisterPageComponent,
       },
     ],
   },
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(appRoutes, { preloadingStrategy: PreloadAllModules }),
-  ],
+  imports: [RouterModule.forChild(authRoutes)],
   exports: [RouterModule],
 })
 // tslint:disable-next-line:no-unnecessary-class
-export class AppRoutingModule {}
+export class AuthRoutingModule {}
 </code></pre>
     </div>
 </div>
@@ -150,7 +136,7 @@ export class AppRoutingModule {}
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'module';
-            var COMPODOC_CURRENT_PAGE_URL = 'AppRoutingModule.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'AuthRoutingModule.html';
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

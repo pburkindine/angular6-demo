@@ -1,0 +1,111 @@
+<mat-card class="RegisterPage__card">
+  <mat-card-header>
+    <mat-card-title class="RegisterPage__title">{{ 'pages.register.title' | translate }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form class="RegisterPage__form" *ngIf="form">
+      <mat-form-field class="RegisterPage__name-field">
+        <input matInput placeholder="{{ 'pages.register.namePlaceholder' | translate }}" [formControl]="form.get('name')" />
+        <button
+            mat-button
+            *ngIf="form.get('name').value"
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            (click)="form.get('name').setValue(null)"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+        <mat-error *ngIf="form.get('name').hasError('maxlength')">
+          Your name cannot be more than 255 characters - TODO lang
+        </mat-error>
+        <mat-error *ngIf="form.get('name').hasError('required')">
+          Name is required - TODO lang
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="RegisterPage__email-field">
+        <input matInput placeholder="example@email.com" [formControl]="form.get('email')" />
+        <button
+            mat-button
+            *ngIf="form.get('email').value"
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            (click)="form.get('email').setValue(null)"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+        <mat-error *ngIf="form.get('email').hasError('email') && !form.get('email').hasError('required')">
+          Please enter a valid email address - TODO lang
+        </mat-error>
+        <mat-error *ngIf="form.get('email').hasError('required')">
+          Email is required - TODO lang
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="RegisterPage__password-field pt-2">
+        <input type="password" matInput placeholder="{{ 'pages.register.passwordPlaceholder' | translate }}" [formControl]="form.get('password')" />
+        <button
+            mat-button
+            *ngIf="form.get('password').value"
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            (click)="form.get('password').setValue(null)"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+        <mat-hint align="end" aria-live="polite">
+          {{ form.get('password').value?.length }} / 32
+        </mat-hint>
+        <mat-error *ngIf="form.get('password').hasError('maxlength')">
+          Password exceeds 255 characters - TODO lang
+        </mat-error>
+        <mat-error *ngIf="form.get('password').hasError('required')">
+          Password is required - TODO lang
+        </mat-error>
+        <!-- TODO get this going -->
+        <mat-error *ngIf="form.get('password').hasError('passwordRulesInvalid')">
+          Your password doesn't match the rules below yet - TODO lang
+          <mat-password-strength-info
+            [passwordComponent]="passwordStrengthMeter"
+          >
+          </mat-password-strength-info>
+        </mat-error>
+      </mat-form-field>
+      <mat-password-strength
+          class="d-block w-50"
+          #passwordStrengthMeter
+          [password]="form.get('password').value"
+      >
+      </mat-password-strength>
+
+      <mat-form-field class="RegisterPage__confirm-password-field pt-4">
+        <input type="password" matInput placeholder="{{ 'pages.register.confirmPasswordPlaceholder' | translate }}" [formControl]="form.get('confirmPassword')" />
+        <button
+            mat-button
+            *ngIf="form.get('confirmPassword').value"
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            (click)="form.get('confirmPassword').setValue(null)"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+        <mat-error *ngIf="form.get('confirmPassword').hasError('required')">
+          Please confirm password - TODO lang
+        </mat-error>
+        <mat-error *ngIf="form.get('confirmPassword').hasError('equalTo')">
+          Passwords don't match - TODO lang
+        </mat-error>
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions class="text-right">
+    <button mat-raised-button (click)="register()" color="primary" [disabled]="!form.valid">{{ 'pages.register.registerButton' | translate }}</button>
+  </mat-card-actions>
+</mat-card>
+<div class="RegisterPage__signup_link col-12 text-center pt-3">
+  <a class="clickable" (click)="goToLogin()">{{ 'pages.register.loginLink' | translate}}</a>
+</div>

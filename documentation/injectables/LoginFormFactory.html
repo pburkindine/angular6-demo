@@ -199,15 +199,21 @@ import { FormBuilder, FormGroup, Validators } from &#x27;@angular/forms&#x27;;
 import { CustomValidators } from &#x27;ng2-validation&#x27;;
 
 @Injectable({
-  providedIn: &#x27;root&#x27;
+  providedIn: &#x27;root&#x27;,
 })
 export class LoginFormFactory {
-  constructor(private _formBuilder: FormBuilder) { }
+  constructor(private _formBuilder: FormBuilder) {}
 
   public getForm(): FormGroup {
     return this._formBuilder.group({
-      &#x27;email&#x27;: this._formBuilder.control(null, [CustomValidators.email, Validators.required]),
-      &#x27;password&#x27;: this._formBuilder.control(null, [Validators.required, Validators.maxLength(255)]),
+      email: this._formBuilder.control(null, [
+        CustomValidators.email,
+        Validators.required,
+      ]),
+      password: this._formBuilder.control(null, [
+        Validators.required,
+        Validators.maxLength(255),
+      ]),
     });
   }
 }

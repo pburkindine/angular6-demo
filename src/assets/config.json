@@ -3,7 +3,8 @@
   "auth": {
     "heroImageUri": "/assets/img/hero.jpg",
     "loginUri": "/auth/login",
-    "logoutUri": "/auth/logout"
+    "logoutUri": "/auth/logout",
+    "registerUri": "/auth/register"
   },
   "core": {
     "apiBaseUri": "http://localhost:8081/api",
