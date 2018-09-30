@@ -3,7 +3,7 @@ import {
   HttpClient,
   HttpClientModule,
 } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -24,14 +24,18 @@ import { ToastrModule } from 'ngx-toastr';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
 import { AuthConfig } from './config/auth.config';
-import { LogServiceAbstract } from './interface/service/log.service.abstract';
-import { RequestInspectorService } from './service/http/request-inspector.service';
-import { AuthTokenInterceptor } from './service/interceptor/auth-token.interceptor.service';
-import { JsonHeaderInterceptor } from './service/interceptor/json-header.interceptor.service';
-import { LogRequestInterceptor } from './service/interceptor/log-request.interceptor.service';
-import { LogResponseInterceptor } from './service/interceptor/log-response.interceptor.service';
-import { TimingInterceptor } from './service/interceptor/timing.interceptor.service';
-import { LogService } from './service/log.service';
+import { CoreModule } from './core/core.module';
+import { LogServiceAbstract } from './core/interface/service/log.service.abstract';
+import { AuthTokenInterceptor } from './core/service/interceptor/auth-token.interceptor.service';
+import { JsonHeaderInterceptor } from './core/service/interceptor/json-header.interceptor.service';
+import { LogRequestInterceptor } from './core/service/interceptor/log-request.interceptor.service';
+import { LogResponseInterceptor } from './core/service/interceptor/log-response.interceptor.service';
+import { TimingInterceptor } from './core/service/interceptor/timing.interceptor.service';
+import { LogService } from './core/service/log.service';
+import { LayoutModule } from './layout/layout.module';
+import { AuthModule } from './auth/auth.module';
+import { environment } from '../environments/environment';
+import { ErrorHandlerService } from './core/service/error-handler.service';
 
 export function configFactory(http: HttpClient): ConfigLoader {
   return new ConfigHttpLoader(http, './assets/config.json');
@@ -55,8 +59,7 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
     FormsModule,
     HttpClientModule,
     LoggerModule.forRoot({
-      serverLoggingUrl: '/api/logs',
-      level: NgxLoggerLevel.DEBUG,
+      level: environment.production ? NgxLoggerLevel.OFF : NgxLoggerLevel.TRACE,
       serverLogLevel: NgxLoggerLevel.ERROR,
     }),
     Ng2UiAuthModule.forRoot(AuthConfig),
@@ -75,10 +78,13 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
         deps: [HttpClient],
       },
     }),
+
+    AuthModule,
+    CoreModule,
+    LayoutModule,
   ],
   declarations: [AppComponent],
   providers: [
-    RequestInspectorService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TimingInterceptor,
@@ -103,6 +109,11 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
       provide: HTTP_INTERCEPTORS,
       useClass: LogResponseInterceptor,
       multi: true,
+    },
+
+    {
+      provide: ErrorHandler,
+      useClass: ErrorHandlerService,
     },
 
     ConfigService,

@@ -1,6 +1,13 @@
 {
   "production": false,
+  "auth": {
+    "heroImageUri": "/assets/img/hero.jpg",
+    "logoutUri": "/auth/logout"
+  },
   "core": {
     "apiBaseUri": "http://angular6demoapi-env.i6kpqg7an2.us-east-2.elasticbeanstalk.com/api"
+  },
+  "logging": {
+    "logErrorUri": "/log/error"
   }
 }

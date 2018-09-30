@@ -74,7 +74,39 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
 import { PreloadAllModules, RouterModule, Routes } from &#x27;@angular/router&#x27;;
 
-const appRoutes: Routes &#x3D; [];
+import { LoginComponent } from &#x27;./auth/component/login/login.component&#x27;;
+import { AuthGuard } from &#x27;./core/service/guard/auth.guard&#x27;;
+import { AuthLayoutComponent } from &#x27;./layout/component/auth/auth.component&#x27;;
+import { ErrorPageComponent } from &#x27;./layout/component/error/error.component&#x27;;
+
+const appRoutes: Routes &#x3D; [
+
+  {
+    path: &#x27;auth/login&#x27;,
+    component: AuthLayoutComponent,
+    children: [
+      {
+        path: &#x27;&#x27;,
+        component: LoginComponent,
+      },
+    ],
+  },
+  {
+    path: &#x27;&#x27;,
+    canActivate: [AuthGuard],
+    children: [{ path: &#x27;main&#x27;, loadChildren: &#x27;./home/home.module#HomeModule&#x27; }],
+  },
+  {
+    path: &#x27;**&#x27;,
+    component: AuthLayoutComponent,
+    children: [
+      {
+        path: &#x27;**&#x27;,
+        component: ErrorPageComponent,
+      },
+    ],
+  },
+];
 
 @NgModule({
   imports: [

@@ -1,7 +1,38 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
-const appRoutes: Routes = [];
+import { LoginComponent } from './auth/component/login/login.component';
+import { AuthGuard } from './core/service/guard/auth.guard';
+import { AuthLayoutComponent } from './layout/component/auth/auth.component';
+import { ErrorPageComponent } from './layout/component/error/error.component';
+
+const appRoutes: Routes = [
+  {
+    path: 'auth/login',
+    component: AuthLayoutComponent,
+    children: [
+      {
+        path: '',
+        component: LoginComponent,
+      },
+    ],
+  },
+  {
+    path: '',
+    canActivate: [AuthGuard],
+    children: [{ path: 'main', loadChildren: './home/home.module#HomeModule' }],
+  },
+  {
+    path: '**',
+    component: AuthLayoutComponent,
+    children: [
+      {
+        path: '**',
+        component: ErrorPageComponent,
+      },
+    ],
+  },
+];
 
 @NgModule({
   imports: [

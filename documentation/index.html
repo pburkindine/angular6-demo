@@ -35,23 +35,25 @@
 
 <h1 id="angular-6-full-stack-demo">Angular 6 Full-Stack Demo</h1>
 <p>In this project I am demonstrating my current patterns and understanding in the
-MEAN stack composed of Angular 6, Angular Material, express,
+MEAN stack composed of Angular 6, Angular Material, Bootstrap 4, FontAwesome5, express,
 and MongoDB.</p>
 <h1 id="backend">Backend</h1>
 <p>In this application, an express REST API backed by MongoDB exposes a store
 selling sporks (it&#39;s a spoon and fork combined!).</p>
 <p>Passport and JWT are used for authentication against MongoDB and call authentication.</p>
+<p>TODO is JWT blacklisting and logout since Redis is not in the stack</p>
 <h1 id="frontend">Frontend</h1>
 <p>An Angular Material front-end consumes the API.  The customer registers, builds a cart, then checks out using Stripe.</p>
 <p>In the Angular app, we use @ngrx/store and ChangeDetectionStrategy.Push for performance, immutability and stability.</p>
 <p>ngx-translate and ngx-config provide runtime configuration and translation.</p>
-<p>ngx-logger feeds errors and events to an API endpoint to be consumed, and angulartics2 feeds data to Google Analytics.</p>
+<p>ngx-logger feeds errors and events to an API endpoint where winston feeds them to the Elastic Beanstalk logs</p>
+<p>angulartics2 feeds data to Google Analytics.</p>
 <p>OutdatedBrowser is used to redirect users of old browsers.  Compodoc provides documentation.</p>
 <h1 id="pipeline">Pipeline</h1>
 <p>Code is deployed CI/CD using AWS CodePipline/CodeBuild.</p>
 <p>The backend is deployed to an EC2 using Elastic Beanstalk, and the frontend
 is exposed in an S3 bucket.</p>
-<p>Strict linting of TypeScript, SCSS and HTML in the front-end
+<p>Strict linting of TypeScript, SCSS, JSON and HTML on the front-end
 and ES6 in the backend, along with unit tests,
 enforce quality measures at pre-commit and in the pipeline.</p>
 <p>NOTE: There is no effort made at this time to implement a config.json builder,

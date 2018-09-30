@@ -35,13 +35,15 @@ export class TimingInterceptor implements HttpInterceptor {
       // tslint:disable-next-line:no-any
       tap((event: HttpEvent<any>) => {
         if (!(event instanceof HttpResponse)) {
-          return;
+          return event;
         }
 
         const elapsed: number = Date.now() - started;
         this._logger.devLog(
           `Request for ${req.urlWithParams} took ${elapsed} ms.`
         );
+
+        return event;
       })
     );
   }

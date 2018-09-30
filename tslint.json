@@ -21,6 +21,7 @@
     ],
     "completed-docs": false,
     "curly": true,
+    "cyclomatic-complexity": [true, 20],
     "deprecation": {
       "severity": "warn"
     },
@@ -38,7 +39,12 @@
       "spaces"
     ],
     "interface-over-type-literal": true,
+    "interface-name": [
+      true,
+      "never-prefix"
+    ],
     "label-position": true,
+    "max-file-line-count": [true, 250],
     "max-line-length": [
       true,
       140
@@ -65,7 +71,6 @@
       {"type": "property", "modifiers": ["public", "static", "const"], "format": "UPPER_CASE"},
       {"type": "type", "format": "PascalCase"},
       {"type": "class", "modifiers": "abstract", "suffix": "Abstract"},
-      {"type": "interface", "suffix": "Interface"},
       {"type": "enum", "suffix": "Enum"},
       {"type": "enumMember", "format": "PascalCase"}
     ],
@@ -119,6 +124,7 @@
       "single"
     ],
     "radix": true,
+    "readonly-keyword": [true, "ignore-class"],
     "semicolon": [
       true,
       "always"

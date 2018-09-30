@@ -1,7 +1,7 @@
 # Angular 6 Full-Stack Demo
 
 In this project I am demonstrating my current patterns and understanding in the
-MEAN stack composed of Angular 6, Angular Material, express,
+MEAN stack composed of Angular 6, Angular Material, Bootstrap 4, FontAwesome5, express,
 and MongoDB.
 
 # Backend
@@ -11,6 +11,8 @@ selling sporks (it's a spoon and fork combined!).
  
 Passport and JWT are used for authentication against MongoDB and call authentication.
 
+TODO is JWT blacklisting and logout since Redis is not in the stack
+
 # Frontend
 
 An Angular Material front-end consumes the API.  The customer registers, builds a cart, then checks out using Stripe.
@@ -19,7 +21,9 @@ In the Angular app, we use @ngrx/store and ChangeDetectionStrategy.Push for perf
 
 ngx-translate and ngx-config provide runtime configuration and translation.
 
-ngx-logger feeds errors and events to an API endpoint to be consumed, and angulartics2 feeds data to Google Analytics.
+ngx-logger feeds errors and events to an API endpoint where winston feeds them to the Elastic Beanstalk logs
+
+angulartics2 feeds data to Google Analytics.
 
 OutdatedBrowser is used to redirect users of old browsers.  Compodoc provides documentation.
 
@@ -30,7 +34,7 @@ Code is deployed CI/CD using AWS CodePipline/CodeBuild.
 The backend is deployed to an EC2 using Elastic Beanstalk, and the frontend
 is exposed in an S3 bucket.
 
-Strict linting of TypeScript, SCSS and HTML in the front-end
+Strict linting of TypeScript, SCSS, JSON and HTML on the front-end
 and ES6 in the backend, along with unit tests,
 enforce quality measures at pre-commit and in the pipeline.
 

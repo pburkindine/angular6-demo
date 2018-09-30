@@ -60,7 +60,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/service/interceptor/timing.interceptor.service.ts</code>
+            <code>src/app/core/service/interceptor/timing.interceptor.service.ts</code>
         </p>
 
 
@@ -106,7 +106,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/service/interceptor/timing.interceptor.service.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/core/service/interceptor/timing.interceptor.service.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -185,7 +185,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/service/interceptor/timing.interceptor.service.ts:23</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/core/service/interceptor/timing.interceptor.service.ts:23</a></div>
                             </td>
                         </tr>
 
@@ -288,13 +288,15 @@ export class TimingInterceptor implements HttpInterceptor {
       // tslint:disable-next-line:no-any
       tap((event: HttpEvent&lt;any&gt;) &#x3D;&gt; {
         if (!(event instanceof HttpResponse)) {
-          return;
+          return event;
         }
 
         const elapsed: number &#x3D; Date.now() - started;
         this._logger.devLog(
           &#x60;Request for ${req.urlWithParams} took ${elapsed} ms.&#x60;
         );
+
+        return event;
       })
     );
   }
