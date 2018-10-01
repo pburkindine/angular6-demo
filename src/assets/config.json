@@ -7,7 +7,7 @@
     "registerUri": "/auth/register"
   },
   "core": {
-    "apiBaseUri": "http://angular6demoapi-env.i6kpqg7an2.us-east-2.elasticbeanstalk.com/api"
+    "apiBaseUri": "https://angular6-demo.pwb-demo.com/api"
   },
   "logging": {
     "logErrorUri": "/log/error"

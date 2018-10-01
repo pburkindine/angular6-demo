@@ -101,12 +101,12 @@
                 <tr>
                     <td class="col-md-4">
                                 <span class="modifier">Public</span>
-                        <code>constructor(_injector: <a href="https://angular.io/api/core/Injector" target="_blank">Injector</a>)</code>
+                        <code>constructor(_injector: <a href="https://angular.io/api/core/Injector" target="_blank">Injector</a>, _requestInspector: <a href="../injectables/RequestInspectorService.html">RequestInspectorService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/core/service/interceptor/auth-token.interceptor.service.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/core/service/interceptor/auth-token.interceptor.service.ts:13</a></div>
                             </td>
                         </tr>
 
@@ -128,6 +128,18 @@
                                                   
                                                         <td>
                                                                     <code><a href="https://angular.io/api/core/Injector" target="_blank" >Injector</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_requestInspector</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/RequestInspectorService.html" target="_self" >RequestInspectorService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -173,7 +185,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/core/service/interceptor/auth-token.interceptor.service.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/core/service/interceptor/auth-token.interceptor.service.ts:20</a></div>
                             </td>
                         </tr>
 
@@ -248,10 +260,14 @@
 import { Injectable, Injector } from &#x27;@angular/core&#x27;;
 import { AuthService } from &#x27;ng2-ui-auth&#x27;;
 import { Observable } from &#x27;rxjs&#x27;;
+import { RequestInspectorService } from &#x27;../http/request-inspector.service&#x27;;
 
 @Injectable()
 export class AuthTokenInterceptor implements HttpInterceptor {
-  public constructor(private _injector: Injector) {}
+  public constructor(
+    private _injector: Injector,
+    private _requestInspector: RequestInspectorService
+  ) {}
 
   // tslint:disable:no-any
   public intercept(
@@ -259,6 +275,16 @@ export class AuthTokenInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable&lt;HttpEvent&lt;any&gt;&gt; {
     // tslint:enable:no-any
+    if (!this._requestInspector.isApiRequest(req)) {
+      // TODO this is a shim around the behavior of the AuthService, which tries to modify and inject this header
+      // tslint:disable-next-line:no-any
+      const cleanReq: HttpRequest&lt;any&gt; &#x3D; req.clone({
+        setHeaders: { Authorization: &#x27;&#x27; },
+      });
+
+      return next.handle(cleanReq);
+    }
+
     const authService: AuthService &#x3D; this._injector.get&lt;AuthService&gt;(
       AuthService
     );

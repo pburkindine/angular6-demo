@@ -41,4 +41,8 @@ describe('RequestInspectorService', () => {
     const result: boolean = service.isConfigFileRequest(mockRequest);
     expect(result).toBe(false);
   });
+
+  it('should test isApiRequest', () => {
+    pending('TODO - No time for this tonight');
+  });
 });

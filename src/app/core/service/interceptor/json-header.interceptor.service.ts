@@ -6,12 +6,13 @@ import {
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { RequestInspectorService } from '../http/request-inspector.service';
 
 @Injectable()
 export class JsonHeaderInterceptor implements HttpInterceptor {
   private _jsonEncodeVerbs: string[] = ['POST', 'PUT'];
 
-  public constructor() {}
+  public constructor(private _requestInspector: RequestInspectorService) {}
 
   // tslint:disable:no-any
   public intercept(
@@ -19,6 +20,10 @@ export class JsonHeaderInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     // tslint:enable:no-any
+
+    if (!this._requestInspector.isApiRequest(req)) {
+      return next.handle(req);
+    }
 
     // tslint:disable-next-line:no-any
     const headers: any = {

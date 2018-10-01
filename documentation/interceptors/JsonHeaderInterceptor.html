@@ -116,15 +116,45 @@
                 <tr>
                     <td class="col-md-4">
                                 <span class="modifier">Public</span>
-                        <code>constructor()</code>
+                        <code>constructor(_requestInspector: <a href="../injectables/RequestInspectorService.html">RequestInspectorService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/core/service/interceptor/json-header.interceptor.service.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/core/service/interceptor/json-header.interceptor.service.ts:13</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>_requestInspector</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/RequestInspectorService.html" target="_self" >RequestInspectorService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </section>
@@ -158,7 +188,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/core/service/interceptor/json-header.interceptor.service.ts:17</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/core/service/interceptor/json-header.interceptor.service.ts:20</a></div>
                             </td>
                         </tr>
 
@@ -257,7 +287,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/core/service/interceptor/json-header.interceptor.service.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/core/service/interceptor/json-header.interceptor.service.ts:13</a></div>
                             </td>
                         </tr>
 
@@ -278,12 +308,15 @@
 } from &#x27;@angular/common/http&#x27;;
 import { Injectable } from &#x27;@angular/core&#x27;;
 import { Observable } from &#x27;rxjs&#x27;;
+import { RequestInspectorService } from &#x27;../http/request-inspector.service&#x27;;
 
 @Injectable()
 export class JsonHeaderInterceptor implements HttpInterceptor {
   private _jsonEncodeVerbs: string[] &#x3D; [&#x27;POST&#x27;, &#x27;PUT&#x27;];
 
-  public constructor() {}
+  public constructor(
+    private _requestInspector: RequestInspectorService
+  ) {}
 
   // tslint:disable:no-any
   public intercept(
@@ -291,6 +324,10 @@ export class JsonHeaderInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable&lt;HttpEvent&lt;any&gt;&gt; {
     // tslint:enable:no-any
+
+    if (!this._requestInspector.isApiRequest(req)) {
+      return next.handle(req);
+    }
 
     // tslint:disable-next-line:no-any
     const headers: any &#x3D; {
