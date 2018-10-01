@@ -258,7 +258,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/home/service/spork.service.ts:38</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/home/service/spork.service.ts:36</a></div>
                             </td>
                         </tr>
 
@@ -404,7 +404,7 @@ import { Spork } from &#x27;../model/spork.model&#x27;;
 import { SporkFactory } from &#x27;./factory/spork.factory&#x27;;
 
 @Injectable({
-  providedIn: &#x27;root&#x27;
+  providedIn: &#x27;root&#x27;,
 })
 export class SporkService {
   private _getUri: string;
@@ -412,7 +412,7 @@ export class SporkService {
   constructor(
     private _configService: ConfigService,
     private _http: HttpClient,
-    private _sporkFactory: SporkFactory,
+    private _sporkFactory: SporkFactory
   ) {
     this._configure();
   }
@@ -425,9 +425,7 @@ export class SporkService {
   }
 
   public getSporks(): Observable&lt;Spork[]&gt; {
-    return this._http.get(this._getUri).pipe(
-      map(this._getResult.bind(this))
-    );
+    return this._http.get(this._getUri).pipe(map(this._getResult.bind(this)));
   }
 
   protected _getResult(resultPayload: SporkPayload[]): Spork[] {

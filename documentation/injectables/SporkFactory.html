@@ -289,10 +289,10 @@ import { SporkPayload } from &#x27;../../model/payload/spork.payload&#x27;;
 import { Spork } from &#x27;../../model/spork.model&#x27;;
 
 @Injectable({
-  providedIn: &#x27;root&#x27;
+  providedIn: &#x27;root&#x27;,
 })
 export class SporkFactory {
-  constructor() { }
+  constructor() {}
 
   public getFromPayload(sporksPayload: SporkPayload[]): Spork[] {
     const sporks: Spork[] &#x3D; [];
@@ -309,10 +309,7 @@ export class SporkFactory {
     return sporks;
   }
 
-  public getSpork(
-    price: Money,
-    imageUri: string,
-  ): Spork {
+  public getSpork(price: Money, imageUri: string): Spork {
     return new Spork(price, imageUri);
   }
 }

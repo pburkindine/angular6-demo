@@ -265,7 +265,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/home/component/spork-list/spork-list.component.ts:30</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/home/component/spork-list/spork-list.component.ts:29</a></div>
                             </td>
                         </tr>
 
@@ -411,7 +411,7 @@ import { SporkService } from &#x27;../../service/spork.service&#x27;;
 @Component({
   selector: &#x27;app-spork-list&#x27;,
   templateUrl: &#x27;./spork-list.component.html&#x27;,
-  styleUrls: [&#x27;./spork-list.component.scss&#x27;]
+  styleUrls: [&#x27;./spork-list.component.scss&#x27;],
 })
 export class SporkListComponent implements OnInit {
   public sporks: Spork[];
@@ -419,14 +419,13 @@ export class SporkListComponent implements OnInit {
   constructor(
     private _logger: LogServiceAbstract,
     private _sporkService: SporkService,
-    private _toastr: ToastrService,
-  ) { }
+    private _toastr: ToastrService
+  ) {}
 
   public ngOnInit(): void {
-    this._sporkService.getSporks().subscribe(
-      (sporks: Spork[]) &#x3D;&gt; { this.sporks &#x3D; sporks; },
-      this._errorHandler.bind(this)
-    );
+    this._sporkService.getSporks().subscribe((sporks: Spork[]) &#x3D;&gt; {
+      this.sporks &#x3D; sporks;
+    }, this._errorHandler.bind(this));
   }
 
   protected _errorHandler(errorResponse: HttpErrorResponse): void {

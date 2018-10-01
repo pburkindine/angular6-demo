@@ -222,7 +222,13 @@ import { HomeRoutingModule } from &#x27;./home.routing.module&#x27;;
 import { SporkListComponent } from &#x27;./component/spork-list/spork-list.component&#x27;;
 
 @NgModule({
-  imports: [CommonModule, CoreModule, HomeRoutingModule, LayoutModule, MatCardModule],
+  imports: [
+    CommonModule,
+    CoreModule,
+    HomeRoutingModule,
+    LayoutModule,
+    MatCardModule,
+  ],
   declarations: [HomeComponent, SporkListComponent],
 })
 // tslint:disable-next-line:no-unnecessary-class

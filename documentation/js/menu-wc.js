@@ -123,13 +123,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         <a href="modules/HomeModule.html" data-type="entity-link">HomeModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                    ${ isNormalMode ? 'data-target="#components-links-module-HomeModule-b7339b322981e9a4126ca790313babf3"' : 'data-target="#xs-components-links-module-HomeModule-b7339b322981e9a4126ca790313babf3"' }>
+                                    ${ isNormalMode ? 'data-target="#components-links-module-HomeModule-8d32c7320a0197733204c6752271e7c0"' : 'data-target="#xs-components-links-module-HomeModule-8d32c7320a0197733204c6752271e7c0"' }>
                                     <span class="icon ion-md-cog"></span>
                                     <span>Components</span>
                                     <span class="icon ion-ios-arrow-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                    ${ isNormalMode ? 'id="components-links-module-HomeModule-b7339b322981e9a4126ca790313babf3"' : 'id="xs-components-links-module-HomeModule-b7339b322981e9a4126ca790313babf3"' }>
+                                    ${ isNormalMode ? 'id="components-links-module-HomeModule-8d32c7320a0197733204c6752271e7c0"' : 'id="xs-components-links-module-HomeModule-8d32c7320a0197733204c6752271e7c0"' }>
                                         <li class="link">
                                             <a href="components/HomeComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">HomeComponent</a>
                                         </li>

@@ -7,8 +7,7 @@
     "registerUri": "/auth/register"
   },
   "core": {
-    "apiBaseUri": "http://localhost:8081/api",
-    "apiBaseUri1": "http://angular6demoapi-env.i6kpqg7an2.us-east-2.elasticbeanstalk.com/api"
+    "apiBaseUri": "http://angular6demoapi-env.i6kpqg7an2.us-east-2.elasticbeanstalk.com/api"
   },
   "logging": {
     "logErrorUri": "/log/error"
