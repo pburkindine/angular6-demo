@@ -19,7 +19,7 @@ phases:
   pre_build:
     commands:
       - yarn run lint
-      - docker container run -u $(id -u) --rm --mount src=`pwd`,target=/app,type=bind trion/ng-cli-e2e npm rebuild node-sass && ng test --watch false --progress false
+      - ng test
   build:
     commands:
       - echo Build started on `date`

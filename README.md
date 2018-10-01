@@ -21,6 +21,8 @@ An Angular Material front-end presents the customer with authentication function
 
 (I haven't gotten to the cart and checkout yet)
 
+@ngrx/store and ChangeDetectionStrategy.Push are employed to provide maximum speed and stability
+
 ngx-translate and ngx-config provide runtime configuration and translation.
  
 js-money protects against arithmetic errors in price calculation.
