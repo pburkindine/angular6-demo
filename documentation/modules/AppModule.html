@@ -330,6 +330,7 @@ import { FormsModule, ReactiveFormsModule } from &#x27;@angular/forms&#x27;;
 import { BrowserModule } from &#x27;@angular/platform-browser&#x27;;
 import { BrowserAnimationsModule } from &#x27;@angular/platform-browser/animations&#x27;;
 import { RouterModule } from &#x27;@angular/router&#x27;;
+import { StoreModule } from &#x27;@ngrx/store&#x27;;
 import { ConfigLoader, ConfigModule, ConfigService } from &#x27;@ngx-config/core&#x27;;
 import { ConfigHttpLoader } from &#x27;@ngx-config/http-loader&#x27;;
 import {
@@ -358,6 +359,7 @@ import { LogRequestInterceptor } from &#x27;./core/service/interceptor/log-reque
 import { LogResponseInterceptor } from &#x27;./core/service/interceptor/log-response.interceptor.service&#x27;;
 import { TimingInterceptor } from &#x27;./core/service/interceptor/timing.interceptor.service&#x27;;
 import { LogService } from &#x27;./core/service/log.service&#x27;;
+import { reducer as sporkReducer } from &#x27;./home/state/reducer/spork.reducer&#x27;;
 import { LayoutModule } from &#x27;./layout/layout.module&#x27;;
 
 export function configFactory(http: HttpClient): ConfigLoader {
@@ -392,6 +394,9 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
     Ng2UiAuthModule.forRoot(AuthConfig),
     ReactiveFormsModule,
     RouterModule,
+    StoreModule.forRoot({
+      spork: sporkReducer
+    }),
     ToastrModule.forRoot({
       enableHtml: true,
       disableTimeOut: true,

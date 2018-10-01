@@ -42,7 +42,7 @@ Strict linting of TypeScript, SCSS, JSON and HTML on the front-end
 and ES6 in the backend enforce quality measures at pre-commit and in the pipeline. no-any, max-file-line-count, and
 immutability are enforced.
   
-Unit test coverage is around 98% lines.
+Unit test coverage is at 87% lines, mostly in the core and auth modules.
 
 NOTE: There is no effort made at this time to implement a config.json builder,
 runtime config.json is committed to the repository

@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
+import { StoreModule } from '@ngrx/store';
 import { ConfigLoader, ConfigModule, ConfigService } from '@ngx-config/core';
 import { ConfigHttpLoader } from '@ngx-config/http-loader';
 import {
@@ -37,6 +38,7 @@ import { LogRequestInterceptor } from './core/service/interceptor/log-request.in
 import { LogResponseInterceptor } from './core/service/interceptor/log-response.interceptor.service';
 import { TimingInterceptor } from './core/service/interceptor/timing.interceptor.service';
 import { LogService } from './core/service/log.service';
+import { reducer as sporkReducer } from './home/state/reducer/spork.reducer';
 import { LayoutModule } from './layout/layout.module';
 
 export function configFactory(http: HttpClient): ConfigLoader {
@@ -71,6 +73,9 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
     Ng2UiAuthModule.forRoot(AuthConfig),
     ReactiveFormsModule,
     RouterModule,
+    StoreModule.forRoot({
+      spork: sporkReducer,
+    }),
     ToastrModule.forRoot({
       enableHtml: true,
       disableTimeOut: true,
