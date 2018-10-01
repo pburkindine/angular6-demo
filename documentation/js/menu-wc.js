@@ -123,15 +123,18 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         <a href="modules/HomeModule.html" data-type="entity-link">HomeModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                    ${ isNormalMode ? 'data-target="#components-links-module-HomeModule-00ab78e23f7f9ada17fdf60b39a880b9"' : 'data-target="#xs-components-links-module-HomeModule-00ab78e23f7f9ada17fdf60b39a880b9"' }>
+                                    ${ isNormalMode ? 'data-target="#components-links-module-HomeModule-b7339b322981e9a4126ca790313babf3"' : 'data-target="#xs-components-links-module-HomeModule-b7339b322981e9a4126ca790313babf3"' }>
                                     <span class="icon ion-md-cog"></span>
                                     <span>Components</span>
                                     <span class="icon ion-ios-arrow-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                    ${ isNormalMode ? 'id="components-links-module-HomeModule-00ab78e23f7f9ada17fdf60b39a880b9"' : 'id="xs-components-links-module-HomeModule-00ab78e23f7f9ada17fdf60b39a880b9"' }>
+                                    ${ isNormalMode ? 'id="components-links-module-HomeModule-b7339b322981e9a4126ca790313babf3"' : 'id="xs-components-links-module-HomeModule-b7339b322981e9a4126ca790313babf3"' }>
                                         <li class="link">
                                             <a href="components/HomeComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">HomeComponent</a>
+                                        </li>
+                                        <li class="link">
+                                            <a href="components/SporkListComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">SporkListComponent</a>
                                         </li>
                                 </ul>
                             </li>
@@ -183,6 +186,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         <a href="classes/LogServiceAbstract.html" data-type="entity-link">LogServiceAbstract</a>
                     </li>
                     <li class="link">
+                        <a href="classes/Spork.html" data-type="entity-link">Spork</a>
+                    </li>
+                    <li class="link">
                         <a href="classes/User.html" data-type="entity-link">User</a>
                     </li>
             </ul>
@@ -222,6 +228,12 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="injectables/RequestInspectorService.html" data-type="entity-link">RequestInspectorService</a>
+                            </li>
+                            <li class="link">
+                                <a href="injectables/SporkFactory.html" data-type="entity-link">SporkFactory</a>
+                            </li>
+                            <li class="link">
+                                <a href="injectables/SporkService.html" data-type="entity-link">SporkService</a>
                             </li>
                             <li class="link">
                                 <a href="injectables/UserFactory.html" data-type="entity-link">UserFactory</a>
@@ -291,6 +303,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                     </li>
                     <li class="link">
                         <a href="interfaces/LoginResult.html" data-type="entity-link">LoginResult</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/SporkPayload.html" data-type="entity-link">SporkPayload</a>
                     </li>
                     <li class="link">
                         <a href="interfaces/UserPayload.html" data-type="entity-link">UserPayload</a>

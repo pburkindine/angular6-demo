@@ -1,6 +1,6 @@
-import { HomeComponent } from './home.component';
+import { SporkFactory } from './spork.factory';
 
-describe('HomeComponent', () => {
+describe('SporkFactory', () => {
   it('should be tested', () => {
     pending('TODO - No time for this tonight');
   });

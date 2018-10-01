@@ -12,5 +12,8 @@
   },
   "logging": {
     "logErrorUri": "/log/error"
+  },
+  "spork": {
+    "getUri": "/spork"
   }
 }

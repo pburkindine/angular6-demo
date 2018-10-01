@@ -4,6 +4,8 @@ In this project I am demonstrating my current patterns and understanding in the
 MEAN stack composed of Angular 6, Angular Material, Bootstrap 4, FontAwesome5, express,
 and MongoDB.
 
+This is a two-day hack-a-thon to showcase my day-to-day toolbox, so still a lot to be done!
+
 # Backend
 
 In this application, an express REST API backed by MongoDB exposes a store
@@ -15,17 +17,19 @@ TODO is JWT blacklisting and logout since Redis is not in the stack
 
 # Frontend
 
-An Angular Material front-end consumes the API.  The customer registers, builds a cart, then checks out using Stripe.
+An Angular Material front-end presents the customer with authentication functionality and a collection of sporks.
 
-In the Angular app, we use @ngrx/store, reactive forms, and ChangeDetectionStrategy.Push for performance, immutability and stability.
+(I haven't gotten to the cart and checkout yet)
 
 ngx-translate and ngx-config provide runtime configuration and translation.
+ 
+js-money protects against arithmetic errors in price calculation.
 
-ngx-logger feeds errors and events to an API endpoint where winston feeds them to the Elastic Beanstalk logs
+ngx-logger feeds errors and events to an API endpoint, where winston feeds them to the Elastic Beanstalk logs
 
-angulartics2 feeds data to Google Analytics.
+angulartics2 feeds data to Google Analytics.  Compodoc provides documentation.
 
-OutdatedBrowser is used to redirect users of old browsers.  Compodoc provides documentation.
+OutdatedBrowser is used to redirect users of old browsers.
 
 # Pipeline
 

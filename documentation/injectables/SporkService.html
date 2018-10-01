@@ -30,15 +30,18 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content component">
+               <div class="content injectable">
                    <div class="content-data">
 
 
 
 
+
+
+
 <ol class="breadcrumb">
-  <li>Components</li>
-  <li>AuthLayoutComponent</li>
+  <li>Injectables</li>
+  <li>SporkService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -48,70 +51,20 @@
         <li >
             <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
         </li>
-        <li >
-            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li >
-            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
-        </li>
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info"><p class="comment">
-    <h3>File</h3>
-</p>
-<p class="comment">
-    <code>src/app/layout/component/auth/auth.component.ts</code>
-</p>
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/home/service/spork.service.ts</code>
+        </p>
 
 
 
-    <p class="comment">
-        <h3>Implements</h3>
-    </p>
-    <p class="comment">
-                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
-    </p>
-
-
-<section>
-    <h3>Metadata</h3>
-    <table class="table table-sm table-hover">
-        <tbody>
-
-
-
-
-
-
-
-
-
-
-
-            <tr>
-                <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-auth-layout</code></td>
-            </tr>
-
-            <tr>
-                <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>auth.component.scss</code></td>
-            </tr>
-
-
-
-            <tr>
-                <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./auth.component.html</code></td>
-            </tr>
-
-
-        </tbody>
-    </table>
-</section>
-
-    <section>
+            <section>
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
@@ -124,8 +77,8 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                    <span class="modifier">Public</span>
-                                <a href="#heroImageUri">heroImageUri</a>
+                                    <span class="modifier">Private</span>
+                                <a href="#_getUri">_getUri</a>
                             </li>
                         </ul>
                     </td>
@@ -144,7 +97,12 @@
                                 <a href="#_configure">_configure</a>
                             </li>
                             <li>
-                                <a href="#ngOnInit">ngOnInit</a>
+                                    <span class="modifier">Protected</span>
+                                <a href="#_getResult">_getResult</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getSporks">getSporks</a>
                             </li>
                         </ul>
                     </td>
@@ -158,18 +116,18 @@
     </table>
 </section>
 
-    <section>
+            <section>
     <h3 id="constructor">Constructor</h3>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(_configService: ConfigService)</code>
+<code>constructor(_configService: ConfigService, _http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>, _sporkFactory: <a href="../injectables/SporkFactory.html">SporkFactory</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/layout/component/auth/auth.component.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/home/service/spork.service.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -198,6 +156,30 @@
                                                     </td>
                                                     
                                                 </tr>
+                                                <tr>
+                                                        <td>_http</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_sporkFactory</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/SporkFactory.html" target="_self" >SporkFactory</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -207,11 +189,7 @@
         </table>
 </section>
 
-
-
-
-
-    <section>
+            <section>
     
         <h3 id="methods">
             Methods
@@ -240,7 +218,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/layout/component/auth/auth.component.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/home/service/spork.service.ts:25</a></div>
                             </td>
                         </tr>
 
@@ -260,25 +238,27 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="ngOnInit"></a>
+                        <a name="_getResult"></a>
                         <span class="name">
                             <b>
-                            ngOnInit
+                                <span class="modifier">Protected</span>
+                            _getResult
                             </b>
-                            <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                            <a href="#_getResult"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-<code>ngOnInit()</code>
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>_getResult(resultPayload: <a href="../interfaces/SporkPayload.html">SporkPayload[]</a>)</code>
                     </td>
                 </tr>
 
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/layout/component/auth/auth.component.ts:23</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/home/service/spork.service.ts:38</a></div>
                             </td>
                         </tr>
 
@@ -287,7 +267,78 @@
                     <td class="col-md-4">
 
                             <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>resultPayload</td>
+                                                        <td>
+                                                                    <code><a href="../interfaces/SporkPayload.html" target="_self" >SporkPayload[]</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../classes/Spork.html" target="_self" >Spork[]</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getSporks"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            getSporks
+                            </b>
+                            <a href="#getSporks"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>getSporks()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/home/service/spork.service.ts:32</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../classes/Spork.html" target="_self" >Observable&lt;Spork[]&gt;</a></code>
 
                             </div>
                     </td>
@@ -296,7 +347,7 @@
         </table>
 </section>
 
-    <section>
+            <section>
     
         <h3 id="inputs">
             Properties
@@ -305,19 +356,19 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="heroImageUri"></a>
+                        <a name="_getUri"></a>
                         <span class="name">
                             <b>
-                                <span class="modifier">Public</span>
-                            heroImageUri
+                                <span class="modifier">Private</span>
+                            _getUri
                             </b>
-                            <a href="#heroImageUri"><span class="icon ion-ios-link"></span></a>
+                            <a href="#_getUri"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span><code>heroImageUri:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>_getUri:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 </code>
                     </td>
                 </tr>
@@ -329,7 +380,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/layout/component/auth/auth.component.ts:10</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/home/service/spork.service.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -338,22 +389,31 @@
         </table>
 </section>
 
-</div>
+    </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient } from &#x27;@angular/common/http&#x27;;
+import { Injectable } from &#x27;@angular/core&#x27;;
 import { ConfigService } from &#x27;@ngx-config/core&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
+import { map } from &#x27;rxjs/internal/operators&#x27;;
 
-@Component({
-  selector: &#x27;app-auth-layout&#x27;,
-  templateUrl: &#x27;./auth.component.html&#x27;,
-  styleUrls: [&#x27;./auth.component.scss&#x27;],
+import { SporkPayload } from &#x27;../model/payload/spork.payload&#x27;;
+import { Spork } from &#x27;../model/spork.model&#x27;;
+import { SporkFactory } from &#x27;./factory/spork.factory&#x27;;
+
+@Injectable({
+  providedIn: &#x27;root&#x27;
 })
-export class AuthLayoutComponent implements OnInit {
-  public heroImageUri: string;
+export class SporkService {
+  private _getUri: string;
 
-  constructor(private _configService: ConfigService) {
+  constructor(
+    private _configService: ConfigService,
+    private _http: HttpClient,
+    private _sporkFactory: SporkFactory,
+  ) {
     this._configure();
   }
 
@@ -361,64 +421,23 @@ export class AuthLayoutComponent implements OnInit {
     // tslint:disable-next-line:no-any
     const config: any &#x3D; this._configService.getSettings();
 
-    this.heroImageUri &#x3D; &#x60;${config.auth.heroImageUri}&#x60;;
+    this._getUri &#x3D; &#x60;${config.core.apiBaseUri}${config.spork.getUri}&#x60;;
   }
 
-  ngOnInit(): void {}
+  public getSporks(): Observable&lt;Spork[]&gt; {
+    return this._http.get(this._getUri).pipe(
+      map(this._getResult.bind(this))
+    );
+  }
+
+  protected _getResult(resultPayload: SporkPayload[]): Spork[] {
+    return this._sporkFactory.getFromPayload(resultPayload);
+  }
 }
 </code></pre>
     </div>
 
-    <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;app-lang-switch&gt;&lt;/app-lang-switch&gt;
-&lt;mat-card class&#x3D;&quot;AuthLayout__card&quot;&gt;
-  &lt;div class&#x3D;&quot;d-flex flex-column flex-md-row&quot;&gt;
-    &lt;div class&#x3D;&quot;AuthLayout__hero p-2&quot;&gt;
-      &lt;img class&#x3D;&quot;AuthLayout__hero-img d-block&quot; src&#x3D;&quot;{{ heroImageUri }}&quot; alt&#x3D;&quot;Welcome!&quot; /&gt;
-      &lt;h3 class&#x3D;&quot;AuthLayout__store-title text-center&quot;&gt;{{ &#x27;siteTitle&#x27; | translate }}&lt;/h3&gt;
-    &lt;/div&gt;
-    &lt;div class&#x3D;&quot;AuthLayout__content-pane&quot;&gt;
-      &lt;router-outlet&gt;&lt;/router-outlet&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/mat-card&gt;
-</code></pre>
-    </div>
-
-    <div class="tab-pane fade " id="c-tree">
-        <div id="tree-container"></div>
-        <div class="tree-legend">
-            <div class="title">
-                <b>Legend</b>
-            </div>
-            <div>
-                <div class="color htmlelement"></div><span>Html element</span>
-            </div>
-            <div>
-                <div class="color component"></div><span>Component</span>
-            </div>
-            <div>
-                <div class="color directive"></div><span>Html element with directive</span>
-            </div>
-        </div>
-    </div>
-
-    
 </div>
-
-<script src="../js/libs/vis.min.js"></script>
-<script src="../js/libs/htmlparser.js"></script>
-<script src="../js/libs/deep-iterator.js"></script>
-<script>
-        var COMPONENT_TEMPLATE = '<div><app-lang-switch></app-lang-switch><mat-card class="AuthLayout__card">  <div class="d-flex flex-column flex-md-row">    <div class="AuthLayout__hero p-2">      <img class="AuthLayout__hero-img d-block" src="{{ heroImageUri }}" alt="Welcome!" />      <h3 class="AuthLayout__store-title text-center">{{ \'siteTitle\' | translate }}</h3>    </div>    <div class="AuthLayout__content-pane">      <router-outlet></router-outlet>    </div>  </div></mat-card></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthLayoutComponent', 'selector': 'app-auth-layout'},{'name': 'BackToLoginComponent', 'selector': 'app-back-to-login'},{'name': 'ErrorPageComponent', 'selector': 'app-error-page'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LangSwitchComponent', 'selector': 'app-lang-switch'},{'name': 'LoginPageComponent', 'selector': 'app-login'},{'name': 'MainLayoutComponent', 'selector': 'app-main-layout'},{'name': 'RegisterPageComponent', 'selector': 'app-register'},{'name': 'SporkListComponent', 'selector': 'app-spork-list'},{'name': 'TopnavComponent', 'selector': 'app-topnav'}];
-    var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'AuthLayoutComponent'};
-</script>
-<script src="../js/tree.js"></script>
-
-
-
 
 
 
@@ -446,8 +465,8 @@ export class AuthLayoutComponent implements OnInit {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'AuthLayoutComponent.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'SporkService.html';
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

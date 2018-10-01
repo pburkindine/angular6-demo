@@ -30,15 +30,18 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content component">
+               <div class="content injectable">
                    <div class="content-data">
 
 
 
 
+
+
+
 <ol class="breadcrumb">
-  <li>Components</li>
-  <li>LangSwitchComponent</li>
+  <li>Injectables</li>
+  <li>SporkFactory</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -48,70 +51,20 @@
         <li >
             <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
         </li>
-        <li >
-            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li >
-            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
-        </li>
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info"><p class="comment">
-    <h3>File</h3>
-</p>
-<p class="comment">
-    <code>src/app/core/component/lang-switch/lang-switch.component.ts</code>
-</p>
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/home/service/factory/spork.factory.ts</code>
+        </p>
 
 
 
-    <p class="comment">
-        <h3>Implements</h3>
-    </p>
-    <p class="comment">
-                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
-    </p>
-
-
-<section>
-    <h3>Metadata</h3>
-    <table class="table table-sm table-hover">
-        <tbody>
-
-
-
-
-
-
-
-
-
-
-
-            <tr>
-                <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-lang-switch</code></td>
-            </tr>
-
-            <tr>
-                <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>lang-switch.component.scss</code></td>
-            </tr>
-
-
-
-            <tr>
-                <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./lang-switch.component.html</code></td>
-            </tr>
-
-
-        </tbody>
-    </table>
-</section>
-
-    <section>
+            <section>
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
@@ -126,11 +79,11 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#ngOnInit">ngOnInit</a>
+                                <a href="#getFromPayload">getFromPayload</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#setLang">setLang</a>
+                                <a href="#getSpork">getSpork</a>
                             </li>
                         </ul>
                     </td>
@@ -144,60 +97,26 @@
     </table>
 </section>
 
-    <section>
+            <section>
     <h3 id="constructor">Constructor</h3>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(_translateService: TranslateService)</code>
+<code>constructor()</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/core/component/lang-switch/lang-switch.component.ts:9</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/home/service/factory/spork.factory.ts:10</a></div>
                             </td>
                         </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                            <div>
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>_translateService</td>
-                                                  
-                                                        <td>
-                                                                    <code>TranslateService</code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                    </td>
-                </tr>
             </tbody>
         </table>
 </section>
 
-
-
-
-
-    <section>
+            <section>
     
         <h3 id="methods">
             Methods
@@ -206,67 +125,27 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="ngOnInit"></a>
+                        <a name="getFromPayload"></a>
                         <span class="name">
                             <b>
                                 <span class="modifier">Public</span>
-                            ngOnInit
+                            getFromPayload
                             </b>
-                            <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                            <a href="#getFromPayload"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
                             <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>ngOnInit()</code>
+                        <code>getFromPayload(sporksPayload: <a href="../interfaces/SporkPayload.html">SporkPayload[]</a>)</code>
                     </td>
                 </tr>
 
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/core/component/lang-switch/lang-switch.component.ts:12</a></div>
-                            </td>
-                        </tr>
-
-
-                <tr>
-                    <td class="col-md-4">
-
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="setLang"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Public</span>
-                            setLang
-                            </b>
-                            <a href="#setLang"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                            <span class="modifier-icon icon ion-ios-reset"></span>
-                        <code>setLang(lang: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                    </td>
-                </tr>
-
-
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/core/component/lang-switch/lang-switch.component.ts:14</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/home/service/factory/spork.factory.ts:13</a></div>
                             </td>
                         </tr>
 
@@ -286,7 +165,90 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>lang</td>
+                                                        <td>sporksPayload</td>
+                                                        <td>
+                                                                    <code><a href="../interfaces/SporkPayload.html" target="_self" >SporkPayload[]</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../classes/Spork.html" target="_self" >Spork[]</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getSpork"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            getSpork
+                            </b>
+                            <a href="#getSpork"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>getSpork(price: Money, imageUri: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/home/service/factory/spork.factory.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>price</td>
+                                                        <td>
+                                                                    <code>Money</code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>imageUri</td>
                                                         <td>
                                                                     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
                                                         </td>
@@ -303,7 +265,7 @@
                             <div>
                             </div>
                             <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                                <b>Returns : </b>    <code><a href="../classes/Spork.html" target="_self" >Spork</a></code>
 
                             </div>
                                 <div class="io-description">
@@ -316,72 +278,48 @@
 </section>
 
 
-</div>
+    </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
-import { TranslateService } from &#x27;@ngx-translate/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+import * as Money from &#x27;js-money&#x27;;
 
-@Component({
-  selector: &#x27;app-lang-switch&#x27;,
-  templateUrl: &#x27;./lang-switch.component.html&#x27;,
-  styleUrls: [&#x27;./lang-switch.component.scss&#x27;],
+import { SporkPayload } from &#x27;../../model/payload/spork.payload&#x27;;
+import { Spork } from &#x27;../../model/spork.model&#x27;;
+
+@Injectable({
+  providedIn: &#x27;root&#x27;
 })
-export class LangSwitchComponent implements OnInit {
-  constructor(private _translateService: TranslateService) {}
+export class SporkFactory {
+  constructor() { }
 
-  public ngOnInit(): void {}
+  public getFromPayload(sporksPayload: SporkPayload[]): Spork[] {
+    const sporks: Spork[] &#x3D; [];
 
-  public setLang(lang: string): void {
-    this._translateService.use(lang);
+    for (const sporkPayload of sporksPayload) {
+      sporks.push(
+        this.getSpork(
+          Money.fromDecimal(sporkPayload.price, &#x27;USD&#x27;),
+          sporkPayload.imageUri
+        )
+      );
+    }
+
+    return sporks;
+  }
+
+  public getSpork(
+    price: Money,
+    imageUri: string,
+  ): Spork {
+    return new Spork(price, imageUri);
   }
 }
 </code></pre>
     </div>
 
-    <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;LangSwitch__wrapper text-right pt-2 pr-3&quot;&gt;
-  &lt;a class&#x3D;&quot;clickable&quot; (click)&#x3D;&quot;setLang(&#x27;en&#x27;)&quot;&gt;en&lt;/a&gt; |
-  &lt;a class&#x3D;&quot;clickable&quot; (click)&#x3D;&quot;setLang(&#x27;es&#x27;)&quot;&gt;es&lt;/a&gt;
-&lt;/div&gt;
-</code></pre>
-    </div>
-
-    <div class="tab-pane fade " id="c-tree">
-        <div id="tree-container"></div>
-        <div class="tree-legend">
-            <div class="title">
-                <b>Legend</b>
-            </div>
-            <div>
-                <div class="color htmlelement"></div><span>Html element</span>
-            </div>
-            <div>
-                <div class="color component"></div><span>Component</span>
-            </div>
-            <div>
-                <div class="color directive"></div><span>Html element with directive</span>
-            </div>
-        </div>
-    </div>
-
-    
 </div>
-
-<script src="../js/libs/vis.min.js"></script>
-<script src="../js/libs/htmlparser.js"></script>
-<script src="../js/libs/deep-iterator.js"></script>
-<script>
-        var COMPONENT_TEMPLATE = '<div><div class="LangSwitch__wrapper text-right pt-2 pr-3">  <a class="clickable" (click)="setLang(\'en\')">en</a> |  <a class="clickable" (click)="setLang(\'es\')">es</a></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthLayoutComponent', 'selector': 'app-auth-layout'},{'name': 'BackToLoginComponent', 'selector': 'app-back-to-login'},{'name': 'ErrorPageComponent', 'selector': 'app-error-page'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LangSwitchComponent', 'selector': 'app-lang-switch'},{'name': 'LoginPageComponent', 'selector': 'app-login'},{'name': 'MainLayoutComponent', 'selector': 'app-main-layout'},{'name': 'RegisterPageComponent', 'selector': 'app-register'},{'name': 'SporkListComponent', 'selector': 'app-spork-list'},{'name': 'TopnavComponent', 'selector': 'app-topnav'}];
-    var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'LangSwitchComponent'};
-</script>
-<script src="../js/tree.js"></script>
-
-
-
 
 
 
@@ -409,8 +347,8 @@ export class LangSwitchComponent implements OnInit {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'LangSwitchComponent.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'SporkFactory.html';
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

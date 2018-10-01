@@ -1,0 +1,6 @@
+<div class="d-flex flex-column flex-md-row flex-wrap justify-content-between col-12">
+  <mat-card class="SporkList__card mb-4 mr-3" *ngFor="let spork of sporks">
+    <img class="SporkList__image" src="{{ spork.imageUri }}" /><br/>
+    <span class="SporkList__price">${{ spork.price.toString() | number:'.2-2' }}</span>
+  </mat-card>
+</div>
